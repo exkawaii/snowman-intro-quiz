@@ -287,20 +287,21 @@ function loadYouTubeApi() {
 }
 
 function youtubeWindow(song) {
-  const start = Number.isFinite(Number(song.youtubeStart)) ? Number(song.youtubeStart) : 0;
+  const hasCue = Number.isFinite(Number(song.youtubeStart));
+  const start = hasCue ? Number(song.youtubeStart) : 0;
   const explicitEnd = Number.isFinite(Number(song.youtubeEnd)) ? Number(song.youtubeEnd) : null;
-  return { start, end: explicitEnd && explicitEnd > start ? explicitEnd : null };
+  return { start, end: explicitEnd && explicitEnd > start ? explicitEnd : null, hasCue };
 }
 
 async function playOfficialYouTube(song) {
   if (!song.youtubeVideoId) return false;
   stopAudio(true);
   state.audioMode = "youtube";
+  const range = youtubeWindow(song);
   els.youtubePlayerShell.classList.remove("hidden");
   els.youtubeSourceLink.href = song.youtubeUrl || `https://www.youtube.com/watch?v=${song.youtubeVideoId}`;
-  els.answerRevealLabel.textContent = "TRACK HIGHLIGHT / OFFICIAL VIDEO";
-  els.revealStatus.textContent = "LOADING OFFICIAL VIDEO";
-  const range = youtubeWindow(song);
+  els.answerRevealLabel.textContent = range.hasCue ? "TRACK HIGHLIGHT / CHORUS CUE" : "OFFICIAL VIDEO / FROM START";
+  els.revealStatus.textContent = range.hasCue ? "LOADING CHORUS CUE" : "LOADING OFFICIAL VIDEO";
   await loadYouTubeApi();
   const loadVideo = (player) => {
     const video = { videoId: song.youtubeVideoId, startSeconds: range.start };
@@ -309,8 +310,8 @@ async function playOfficialYouTube(song) {
   };
   if (!youtubePlayer) {
     youtubePlayer = new window.YT.Player("youtube-player", {
-      width: "100%",
-      height: "220",
+      width: "200",
+      height: "200",
       videoId: song.youtubeVideoId,
       host: "https://www.youtube-nocookie.com",
       playerVars: {
@@ -323,7 +324,10 @@ async function playOfficialYouTube(song) {
       events: {
         onReady: (event) => loadVideo(event.target),
         onStateChange: (event) => {
-          if (event.data === window.YT.PlayerState.PLAYING) els.revealStatus.textContent = "PLAYING OFFICIAL VIDEO";
+          if (event.data === window.YT.PlayerState.PLAYING) {
+            const hasCue = state.current && Number.isFinite(Number(state.current.youtubeStart));
+            els.revealStatus.textContent = hasCue ? "PLAYING CHORUS CUE" : "PLAYING OFFICIAL VIDEO";
+          }
           if (event.data === window.YT.PlayerState.ENDED) els.revealStatus.textContent = "OFFICIAL CLIP ENDED";
         },
         onAutoplayBlocked: () => { els.revealStatus.textContent = "PRESS PLAY IN VIDEO"; },

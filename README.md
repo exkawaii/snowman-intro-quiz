@@ -10,6 +10,8 @@ Snow Manの配信曲を使った、4択イントロクイズです。GitHub Page
 - 10問 / 20問 / カスタム / 全曲（現在のカタログ全143曲）モード
 - 正解するとジャケット画像、シングル・アルバム名、曲名を表示
 - 正解後は公式YouTube音源を優先して埋め込み再生（143曲中137曲、未対応曲はApple Musicプレビュー）
+- Musixmatchの曲構成とLRCLIBの同期時刻から調査したサビ候補時刻を59曲に登録し、YouTube APIの`startSeconds` / `endSeconds`へ渡す
+- YouTubeプレイヤーは公式要件に沿った最小200×200pxのコンパクト表示
 - 音源ファイルはリポジトリへ保存せず、YouTube公式プレイヤーまたはApple Music / iTunes Search APIの公式プレビューを再生
 - 正解・不正解、スコア、連続正解、自己ベストを表示
 - キーボードの `1`〜`4` とスペースキーに対応
@@ -55,15 +57,17 @@ git push -u origin main
 ```bash
 uv run python scripts/build_catalog.py
 uv run --with yt-dlp python scripts/collect_youtube.py
+uv run --with requests --with beautifulsoup4 python scripts/research_chorus.py
 ```
 
-`collect_youtube.py` は音源をダウンロードせず、曲名一致かつSnow Man公式チャンネルの検索メタデータだけを取得します。
+`collect_youtube.py` は音源をダウンロードせず、曲名一致かつSnow Man公式チャンネルの検索メタデータだけを取得します。`research_chorus.py` はMusixmatchの曲構成とLRCLIBの同期時刻からサビ候補秒数を調べ、歌詞本文を保存しません。調査方法と未解決曲は [`research/chorus-timing.md`](research/chorus-timing.md) に記録しています。
 
 ## Sources / rights note
 
 - 曲名・配信情報: [Snow Man / MENT RECORDING Official Discography](https://mentrecording.jp/snowman/discography/)
 - 未解禁曲72曲の公式発表: [MENT RECORDING News](https://mentrecording.jp/snowman/news/detail.php?id=1133666)
-- YouTube埋め込み: [YouTube IFrame Player API](https://developers.google.com/youtube/iframe_api_reference)
+- YouTube埋め込み: [YouTube IFrame Player API](https://developers.google.com/youtube/iframe_api_reference)（プレイヤーは最小200×200pxが必要）
+- サビ候補時刻: [Musixmatch](https://www.musixmatch.com/lyrics/Snow-Man-7/Grandeur) の曲構成 + [LRCLIB API](https://lrclib.net/docs) の同期時刻（歌詞本文は保存しない）
 - 試聴プレビュー: [iTunes Search API](https://performance-partners.apple.com/search-api) / [Snow Man on Apple Music](https://music.apple.com/jp/artist/snow-man/1772019148)
 
 このプロジェクトはファン向けの非公式作品です。音源そのものはホスティングせず、YouTube公式プレイヤーを埋め込みます。公式動画がない曲は各サービスが提供する30秒プレビューをブラウザから参照します。YouTube APIや公式動画から音声を抽出・保存していません。配信状況、埋め込み可否、プレビューURL、曲名は提供元の変更により変わる可能性があります。

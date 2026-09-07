@@ -6,7 +6,6 @@
   "songs": [
     {
       "id": "song-001",
-      "highlightStart": 0,
       "title": "Snow World",
       "credit": "",
       "release": "D.D. (Selected Edition) - Single",
@@ -20,7 +19,6 @@
     },
     {
       "id": "song-002",
-      "highlightStart": 0,
       "title": "Big Bang Sweet",
       "credit": "",
       "release": "Grandeur - EP",
@@ -34,7 +32,6 @@
     },
     {
       "id": "song-003",
-      "highlightStart": 0,
       "title": "YumYumYum ～SpicyGirl～",
       "credit": "",
       "release": "HELLO HELLO - EP",
@@ -48,7 +45,6 @@
     },
     {
       "id": "song-004",
-      "highlightStart": 0,
       "title": "Christmas wishes",
       "credit": "",
       "release": "5th Single",
@@ -62,7 +58,6 @@
     },
     {
       "id": "song-005",
-      "highlightStart": 0,
       "title": "My Sweet Girl",
       "credit": "",
       "release": "Secret Touch - EP",
@@ -76,7 +71,6 @@
     },
     {
       "id": "song-006",
-      "highlightStart": 0,
       "title": "REFRESH",
       "credit": "",
       "release": "ブラザービート - EP",
@@ -86,11 +80,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "ztJM-3N33hc",
       "youtubeUrl": "https://www.youtube.com/watch?v=ztJM-3N33hc",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 58.38,
+      "youtubeEnd": 89.54,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 14,
+      "chorusTimingTrack": "REFRESH",
+      "chorusTimingAlbum": "ブラザービート",
+      "chorusTimingDuration": 203.0
     },
     {
       "id": "song-007",
-      "highlightStart": 0,
       "title": "From Today",
       "credit": "",
       "release": "ブラザービート - EP",
@@ -100,11 +101,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "EtJn5RJRG4g",
       "youtubeUrl": "https://www.youtube.com/watch?v=EtJn5RJRG4g",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 62.55,
+      "youtubeEnd": 94.25,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 10,
+      "chorusTimingTrack": "From Today",
+      "chorusTimingAlbum": "Brother Beat",
+      "chorusTimingDuration": 237.0
     },
     {
       "id": "song-008",
-      "highlightStart": 0,
       "title": "Wonderful! × Surprise!",
       "credit": "",
       "release": "オレンジkiss - EP",
@@ -118,7 +126,6 @@
     },
     {
       "id": "song-009",
-      "highlightStart": 0,
       "title": "Feel the light, Lovely",
       "credit": "",
       "release": "オレンジkiss - EP",
@@ -132,7 +139,6 @@
     },
     {
       "id": "song-010",
-      "highlightStart": 0,
       "title": "Luv Classic",
       "credit": "",
       "release": "タペストリー / W - EP",
@@ -142,11 +148,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "L95m0xIWTEE",
       "youtubeUrl": "https://www.youtube.com/watch?v=L95m0xIWTEE",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 56.84,
+      "youtubeEnd": 96.58,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 10,
+      "chorusTimingTrack": "Luv Classic",
+      "chorusTimingAlbum": "Luv Classic",
+      "chorusTimingDuration": 257.0
     },
     {
       "id": "song-011",
-      "highlightStart": 0,
       "title": "NO SURRENDER !",
       "credit": "",
       "release": "タペストリー / W - EP",
@@ -156,11 +169,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "Pf990Iivkew",
       "youtubeUrl": "https://www.youtube.com/watch?v=Pf990Iivkew",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 59.67,
+      "youtubeEnd": 79.67,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "NO SURRENDER !",
+      "chorusTimingAlbum": "タペストリー / W (tapestry / w)",
+      "chorusTimingDuration": 244.0
     },
     {
       "id": "song-012",
-      "highlightStart": 0,
       "title": "ANY & EVERY",
       "credit": "",
       "release": "Dangerholic - EP",
@@ -174,7 +194,6 @@
     },
     {
       "id": "song-013",
-      "highlightStart": 0,
       "title": "ベストフレンド",
       "credit": "",
       "release": "Dangerholic - EP",
@@ -184,11 +203,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "E6bmXx9Qnvo",
       "youtubeUrl": "https://www.youtube.com/watch?v=E6bmXx9Qnvo",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 58.45,
+      "youtubeEnd": 93.18,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 8,
+      "chorusTimingTrack": "ベストフレンド",
+      "chorusTimingAlbum": "Dangerholic",
+      "chorusTimingDuration": 251.0
     },
     {
       "id": "song-014",
-      "highlightStart": 0,
       "title": "NEXT",
       "credit": "",
       "release": "LOVE TRIGGER / We'll go together - EP",
@@ -202,7 +228,6 @@
     },
     {
       "id": "song-015",
-      "highlightStart": 0,
       "title": "ココロヒトツ",
       "credit": "",
       "release": "LOVE TRIGGER / We'll go together - EP",
@@ -216,7 +241,6 @@
     },
     {
       "id": "song-016",
-      "highlightStart": 0,
       "title": "ドレス&タキシード",
       "credit": "",
       "release": "BREAKOUT / 君は僕のもの - EP",
@@ -230,7 +254,6 @@
     },
     {
       "id": "song-017",
-      "highlightStart": 0,
       "title": "What's your color?",
       "credit": "",
       "release": "BREAKOUT / 君は僕のもの - EP",
@@ -244,7 +267,6 @@
     },
     {
       "id": "song-018",
-      "highlightStart": 0,
       "title": "ばきゅん",
       "credit": "",
       "release": "SERIOUS - EP",
@@ -258,7 +280,6 @@
     },
     {
       "id": "song-019",
-      "highlightStart": 0,
       "title": "Infighter",
       "credit": "",
       "release": "Snow Mania S1",
@@ -269,7 +290,6 @@
     },
     {
       "id": "song-020",
-      "highlightStart": 0,
       "title": "TIKI TIKI",
       "credit": "",
       "release": "Snow Mania S1",
@@ -283,7 +303,6 @@
     },
     {
       "id": "song-021",
-      "highlightStart": 0,
       "title": "Delicious!!!",
       "credit": "",
       "release": "Snow Mania S1",
@@ -297,7 +316,6 @@
     },
     {
       "id": "song-022",
-      "highlightStart": 0,
       "title": "HELLO HELLO -Movie Ver.-",
       "credit": "",
       "release": "Snow Mania S1",
@@ -308,7 +326,6 @@
     },
     {
       "id": "song-023",
-      "highlightStart": 0,
       "title": "Be Proud!",
       "credit": "",
       "release": "Snow Mania S1",
@@ -322,7 +339,6 @@
     },
     {
       "id": "song-024",
-      "highlightStart": 0,
       "title": "GRATITUDE",
       "credit": "",
       "release": "Snow Mania S1",
@@ -336,7 +352,6 @@
     },
     {
       "id": "song-025",
-      "highlightStart": 0,
       "title": "Acrobatic",
       "credit": "",
       "release": "Snow Mania S1",
@@ -350,7 +365,6 @@
     },
     {
       "id": "song-026",
-      "highlightStart": 0,
       "title": "Boogie Woogie Baby",
       "credit": "",
       "release": "Snow Mania S1",
@@ -364,7 +378,6 @@
     },
     {
       "id": "song-027",
-      "highlightStart": 0,
       "title": "Vanishing Over",
       "credit": "",
       "release": "Snow Mania S1",
@@ -378,7 +391,6 @@
     },
     {
       "id": "song-028",
-      "highlightStart": 0,
       "title": "IX Guys Snow Man",
       "credit": "",
       "release": "Snow Mania S1",
@@ -392,7 +404,6 @@
     },
     {
       "id": "song-029",
-      "highlightStart": 0,
       "title": "Don't Hold Back",
       "credit": "",
       "release": "Snow Mania S1",
@@ -402,11 +413,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "1f6Ic1UFDWc",
       "youtubeUrl": "https://www.youtube.com/watch?v=1f6Ic1UFDWc",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 55.09,
+      "youtubeEnd": 84.66,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 7,
+      "chorusTimingTrack": "Don’t Hold Back",
+      "chorusTimingAlbum": "Snow Mania S1",
+      "chorusTimingDuration": 225.0
     },
     {
       "id": "song-030",
-      "highlightStart": 0,
       "title": "Make It Hot",
       "credit": "",
       "release": "Snow Mania S1",
@@ -420,7 +438,6 @@
     },
     {
       "id": "song-031",
-      "highlightStart": 0,
       "title": "Lock on!",
       "credit": "",
       "release": "Snow Mania S1",
@@ -434,7 +451,6 @@
     },
     {
       "id": "song-032",
-      "highlightStart": 0,
       "title": "P.M.G.",
       "credit": "深澤辰哉 / 向井康二 / 宮舘涼太",
       "release": "Snow Mania S1",
@@ -448,7 +464,6 @@
     },
     {
       "id": "song-033",
-      "highlightStart": 0,
       "title": "ADDICTED TO LOVE",
       "credit": "岩本照 / ラウール / 佐久間大介",
       "release": "Snow Mania S1",
@@ -462,7 +477,6 @@
     },
     {
       "id": "song-034",
-      "highlightStart": 0,
       "title": "360m",
       "credit": "渡辺翔太 / 阿部亮平 / 目黒蓮",
       "release": "Snow Mania S1",
@@ -476,7 +490,6 @@
     },
     {
       "id": "song-035",
-      "highlightStart": 0,
       "title": "Toxic Girl",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -490,7 +503,6 @@
     },
     {
       "id": "song-036",
-      "highlightStart": 0,
       "title": "Brand New Smile",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -504,7 +516,6 @@
     },
     {
       "id": "song-037",
-      "highlightStart": 0,
       "title": "BOOM BOOM LIGHT",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -518,7 +529,6 @@
     },
     {
       "id": "song-038",
-      "highlightStart": 0,
       "title": "キッタキッテナイ",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -532,7 +542,6 @@
     },
     {
       "id": "song-039",
-      "highlightStart": 0,
       "title": "Movin' up",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -543,7 +552,6 @@
     },
     {
       "id": "song-040",
-      "highlightStart": 0,
       "title": "This is LOVE",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -557,7 +565,6 @@
     },
     {
       "id": "song-041",
-      "highlightStart": 0,
       "title": "HYPNOSIS",
       "credit": "岩本照 / 向井康二 / 目黒蓮",
       "release": "Snow Labo. S2",
@@ -571,7 +578,6 @@
     },
     {
       "id": "song-042",
-      "highlightStart": 0,
       "title": "ガラライキュ！",
       "credit": "深澤辰哉 / ラウール / 渡辺翔太",
       "release": "Snow Labo. S2",
@@ -585,7 +591,6 @@
     },
     {
       "id": "song-043",
-      "highlightStart": 0,
       "title": "Color me live...",
       "credit": "阿部亮平 / 宮舘涼太 / 佐久間大介",
       "release": "Snow Labo. S2",
@@ -599,7 +604,6 @@
     },
     {
       "id": "song-044",
-      "highlightStart": 0,
       "title": "Super Deeper",
       "credit": "",
       "release": "i DO ME",
@@ -613,7 +617,6 @@
     },
     {
       "id": "song-045",
-      "highlightStart": 0,
       "title": "8月の青",
       "credit": "",
       "release": "i DO ME",
@@ -627,7 +630,6 @@
     },
     {
       "id": "song-046",
-      "highlightStart": 0,
       "title": "Two",
       "credit": "渡辺翔太 / 目黒蓮",
       "release": "i DO ME",
@@ -641,7 +643,6 @@
     },
     {
       "id": "song-047",
-      "highlightStart": 0,
       "title": "Bass Bon",
       "credit": "ラウール / 佐久間大介",
       "release": "i DO ME",
@@ -655,7 +656,6 @@
     },
     {
       "id": "song-048",
-      "highlightStart": 0,
       "title": "Vroom Vroom Vroom",
       "credit": "岩本照 / 深澤辰哉 / 宮舘涼太",
       "release": "i DO ME",
@@ -669,7 +669,6 @@
     },
     {
       "id": "song-049",
-      "highlightStart": 0,
       "title": "Gotcha!",
       "credit": "向井康二 / 阿部亮平",
       "release": "i DO ME",
@@ -683,7 +682,6 @@
     },
     {
       "id": "song-050",
-      "highlightStart": 0,
       "title": "リンディーララ",
       "credit": "",
       "release": "RAYS",
@@ -693,11 +691,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "90bpFXDpj44",
       "youtubeUrl": "https://www.youtube.com/watch?v=90bpFXDpj44",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 55.68,
+      "youtubeEnd": 83.68,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "リンディーララ",
+      "chorusTimingAlbum": "RAYS",
+      "chorusTimingDuration": 187.0
     },
     {
       "id": "song-051",
-      "highlightStart": 0,
       "title": "endless night",
       "credit": "",
       "release": "RAYS",
@@ -711,7 +716,6 @@
     },
     {
       "id": "song-052",
-      "highlightStart": 0,
       "title": "君へ贈る応援歌",
       "credit": "",
       "release": "RAYS",
@@ -725,7 +729,6 @@
     },
     {
       "id": "song-053",
-      "highlightStart": 0,
       "title": "これが愛じゃないのなら",
       "credit": "",
       "release": "RAYS",
@@ -739,7 +742,6 @@
     },
     {
       "id": "song-054",
-      "highlightStart": 0,
       "title": "ROCK 'N' ROLL",
       "credit": "",
       "release": "RAYS",
@@ -753,7 +755,6 @@
     },
     {
       "id": "song-055",
-      "highlightStart": 0,
       "title": "Wha cha cha",
       "credit": "",
       "release": "RAYS",
@@ -763,11 +764,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "ewQqOzkESnc",
       "youtubeUrl": "https://www.youtube.com/watch?v=ewQqOzkESnc",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 60.67,
+      "youtubeEnd": 80.67,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "Wha cha cha",
+      "chorusTimingAlbum": "RAYS",
+      "chorusTimingDuration": 218.0
     },
     {
       "id": "song-056",
-      "highlightStart": 0,
       "title": "KATANA",
       "credit": "",
       "release": "RAYS",
@@ -781,7 +789,6 @@
     },
     {
       "id": "song-057",
-      "highlightStart": 0,
       "title": "GLITCH",
       "credit": "岩本照 / ラウール",
       "release": "RAYS",
@@ -795,7 +802,6 @@
     },
     {
       "id": "song-058",
-      "highlightStart": 0,
       "title": "Hot Flow",
       "credit": "目黒蓮 / 佐久間大介",
       "release": "RAYS",
@@ -809,7 +815,6 @@
     },
     {
       "id": "song-059",
-      "highlightStart": 0,
       "title": "ナイトスケープ",
       "credit": "深澤辰哉 / 阿部亮平 / 宮舘涼太",
       "release": "RAYS",
@@ -823,7 +828,6 @@
     },
     {
       "id": "song-060",
-      "highlightStart": 0,
       "title": "星のうた",
       "credit": "渡辺翔太 / 向井康二",
       "release": "RAYS",
@@ -837,7 +841,6 @@
     },
     {
       "id": "song-061",
-      "highlightStart": 0,
       "title": "Spark!!",
       "credit": "",
       "release": "音故知新",
@@ -851,7 +854,6 @@
     },
     {
       "id": "song-062",
-      "highlightStart": 0,
       "title": "くちびる",
       "credit": "",
       "release": "音故知新",
@@ -865,7 +867,6 @@
     },
     {
       "id": "song-063",
-      "highlightStart": 0,
       "title": "嫉妬ガール",
       "credit": "",
       "release": "音故知新",
@@ -875,11 +876,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "nWvoUAYNsyI",
       "youtubeUrl": "https://www.youtube.com/watch?v=nWvoUAYNsyI",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 40.2,
+      "youtubeEnd": 68.2,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "嫉妬ガール",
+      "chorusTimingAlbum": "音故知新",
+      "chorusTimingDuration": 159.0
     },
     {
       "id": "song-064",
-      "highlightStart": 0,
       "title": "Miss Brand-New Friday Night",
       "credit": "",
       "release": "音故知新",
@@ -889,11 +897,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "Fs6YSCMI8BM",
       "youtubeUrl": "https://www.youtube.com/watch?v=Fs6YSCMI8BM",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 58.02,
+      "youtubeEnd": 78.02,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "Miss Brand-New Friday Night",
+      "chorusTimingAlbum": "音故知新",
+      "chorusTimingDuration": 264.0
     },
     {
       "id": "song-065",
-      "highlightStart": 0,
       "title": "約束は君と",
       "credit": "",
       "release": "音故知新",
@@ -907,7 +922,6 @@
     },
     {
       "id": "song-066",
-      "highlightStart": 0,
       "title": "Days",
       "credit": "",
       "release": "音故知新",
@@ -917,11 +931,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "bAbZ-OZGrKI",
       "youtubeUrl": "https://www.youtube.com/watch?v=bAbZ-OZGrKI",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 20.94,
+      "youtubeEnd": 40.94,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "Days",
+      "chorusTimingAlbum": "音故知新",
+      "chorusTimingDuration": 267.0
     },
     {
       "id": "song-067",
-      "highlightStart": 0,
       "title": "愛のせいで",
       "credit": "",
       "release": "音故知新",
@@ -935,7 +956,6 @@
     },
     {
       "id": "song-068",
-      "highlightStart": 0,
       "title": "Symmetry",
       "credit": "岩本照 / 深澤辰哉",
       "release": "音故知新",
@@ -949,7 +969,6 @@
     },
     {
       "id": "song-069",
-      "highlightStart": 0,
       "title": "ART",
       "credit": "阿部亮平 / 目黒蓮",
       "release": "音故知新",
@@ -963,7 +982,6 @@
     },
     {
       "id": "song-070",
-      "highlightStart": 0,
       "title": "地球(あい)してるぜ",
       "credit": "宮舘涼太 / 佐久間大介",
       "release": "音故知新",
@@ -977,7 +995,6 @@
     },
     {
       "id": "song-071",
-      "highlightStart": 0,
       "title": "サンシャインドリーマー",
       "credit": "ラウール / 渡辺翔太 / 向井康二",
       "release": "音故知新",
@@ -991,7 +1008,6 @@
     },
     {
       "id": "song-072",
-      "highlightStart": 0,
       "title": "Nine Snow Charge!!",
       "credit": "",
       "release": "音故知新",
@@ -1005,7 +1021,6 @@
     },
     {
       "id": "song-073",
-      "highlightStart": 0,
       "title": "D.D.",
       "credit": "",
       "release": "Snow Mania S1",
@@ -1015,11 +1030,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "rSD7jb4Xjq8",
       "youtubeUrl": "https://www.youtube.com/watch?v=rSD7jb4Xjq8",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 79.03,
+      "youtubeEnd": 99.03,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "D.D. (Instrumental)",
+      "chorusTimingAlbum": "D.D. / Imitation Rain",
+      "chorusTimingDuration": 279.0
     },
     {
       "id": "song-074",
-      "highlightStart": 0,
       "title": "EVOLUTION",
       "credit": "",
       "release": "Snow Mania S1",
@@ -1033,7 +1055,6 @@
     },
     {
       "id": "song-075",
-      "highlightStart": 0,
       "title": "Secret Touch",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -1047,7 +1068,6 @@
     },
     {
       "id": "song-076",
-      "highlightStart": 0,
       "title": "あいことば",
       "credit": "",
       "release": "i DO ME",
@@ -1061,7 +1081,6 @@
     },
     {
       "id": "song-077",
-      "highlightStart": 0,
       "title": "EMPIRE",
       "credit": "",
       "release": "RAYS",
@@ -1071,11 +1090,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "C9Ykam2hUs0",
       "youtubeUrl": "https://www.youtube.com/watch?v=C9Ykam2hUs0",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 54.04,
+      "youtubeEnd": 74.04,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "EMPIRE",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 201.6653059
     },
     {
       "id": "song-078",
-      "highlightStart": 0,
       "title": "TRUE LOVE",
       "credit": "",
       "release": "音故知新",
@@ -1085,11 +1111,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "mqx7oe22jf8",
       "youtubeUrl": "https://www.youtube.com/watch?v=mqx7oe22jf8",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 85.75,
+      "youtubeEnd": 105.75,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "TRUE LOVE",
+      "chorusTimingAlbum": "音故知新",
+      "chorusTimingDuration": 265.299592
     },
     {
       "id": "song-079",
-      "highlightStart": 0,
       "title": "BOOST",
       "credit": "",
       "release": "音故知新",
@@ -1099,11 +1132,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "P8dE79olI98",
       "youtubeUrl": "https://www.youtube.com/watch?v=P8dE79olI98",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 81.36,
+      "youtubeEnd": 101.36,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "BOOST",
+      "chorusTimingAlbum": "音故知新",
+      "chorusTimingDuration": 224.0
     },
     {
       "id": "song-080",
-      "highlightStart": 0,
       "title": "悪戯な天使",
       "credit": "",
       "release": "音故知新",
@@ -1113,11 +1153,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "RzRlenQT5dk",
       "youtubeUrl": "https://www.youtube.com/watch?v=RzRlenQT5dk",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 75.92,
+      "youtubeEnd": 95.92,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "悪戯な天使",
+      "chorusTimingAlbum": "悪戯な天使",
+      "chorusTimingDuration": 271.0
     },
     {
       "id": "song-081",
-      "highlightStart": 0,
       "title": "カリスマックス",
       "credit": "",
       "release": "音故知新",
@@ -1127,11 +1174,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "ufc54RdoitM",
       "youtubeUrl": "https://www.youtube.com/watch?v=ufc54RdoitM",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 43.39,
+      "youtubeEnd": 68.39,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 8,
+      "chorusTimingTrack": "カリスマックス",
+      "chorusTimingAlbum": "86 M de visualizações",
+      "chorusTimingDuration": 194.0
     },
     {
       "id": "song-082",
-      "highlightStart": 0,
       "title": "SERIOUS",
       "credit": "",
       "release": "音故知新",
@@ -1141,11 +1195,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "H0MuwWjM4ok",
       "youtubeUrl": "https://www.youtube.com/watch?v=H0MuwWjM4ok",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 49.46,
+      "youtubeEnd": 69.46,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 8,
+      "chorusTimingTrack": "SERIOUS",
+      "chorusTimingAlbum": "SERIOUS",
+      "chorusTimingDuration": 204.0
     },
     {
       "id": "song-083",
-      "highlightStart": 0,
       "title": "夏色花火",
       "credit": "",
       "release": "SERIOUS - EP",
@@ -1159,7 +1220,6 @@
     },
     {
       "id": "song-084",
-      "highlightStart": 0,
       "title": "Jack In The Box",
       "credit": "",
       "release": "SERIOUS - EP",
@@ -1169,11 +1229,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "6fSP3R5D3Ek",
       "youtubeUrl": "https://www.youtube.com/watch?v=6fSP3R5D3Ek",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 48.27,
+      "youtubeEnd": 68.27,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "Jack In The Box",
+      "chorusTimingAlbum": "SERIOUS",
+      "chorusTimingDuration": 178.0
     },
     {
       "id": "song-085",
-      "highlightStart": 0,
       "title": "STARS",
       "credit": "",
       "release": "STARS - Single",
@@ -1183,11 +1250,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "TPbZ3IQZ-68",
       "youtubeUrl": "https://www.youtube.com/watch?v=TPbZ3IQZ-68",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 60.02,
+      "youtubeEnd": 91.36,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 8,
+      "chorusTimingTrack": "STARS",
+      "chorusTimingAlbum": "STARS",
+      "chorusTimingDuration": 247.0
     },
     {
       "id": "song-086",
-      "highlightStart": 0,
       "title": "BANG!!",
       "credit": "",
       "release": "BANG!! - Single",
@@ -1197,11 +1271,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "nQMhLxv8fSI",
       "youtubeUrl": "https://www.youtube.com/watch?v=nQMhLxv8fSI",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 51.7,
+      "youtubeEnd": 79.7,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "BANG!!",
+      "chorusTimingAlbum": "BANG!!",
+      "chorusTimingDuration": 205.0
     },
     {
       "id": "song-087",
-      "highlightStart": 0,
       "title": "SAVE YOUR HEART",
       "credit": "",
       "release": "SAVE YOUR HEART - Single",
@@ -1211,11 +1292,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "JGt9zQP4RLg",
       "youtubeUrl": "https://www.youtube.com/watch?v=JGt9zQP4RLg",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 61.73,
+      "youtubeEnd": 81.73,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "SAVE YOUR HEART",
+      "chorusTimingAlbum": "SAVE YOUR HEART",
+      "chorusTimingDuration": 192.0
     },
     {
       "id": "song-088",
-      "highlightStart": 0,
       "title": "オドロウゼ！",
       "credit": "",
       "release": "オドロウゼ! - Single",
@@ -1225,11 +1313,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "VEiBxLwfU3E",
       "youtubeUrl": "https://www.youtube.com/watch?v=VEiBxLwfU3E",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 73.55,
+      "youtubeEnd": 102.75,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 9,
+      "chorusTimingTrack": "オドロウゼ！",
+      "chorusTimingAlbum": "Billboard JAPAN Hot 100 (2026-04-29)",
+      "chorusTimingDuration": 231.0
     },
     {
       "id": "song-089",
-      "highlightStart": 0,
       "title": "グッタイム",
       "credit": "",
       "release": "グッタイム - Single",
@@ -1243,7 +1338,6 @@
     },
     {
       "id": "song-090",
-      "highlightStart": 0,
       "title": "ALL SUITE",
       "credit": "",
       "release": "AMENITY",
@@ -1257,7 +1351,6 @@
     },
     {
       "id": "song-091",
-      "highlightStart": 0,
       "title": "奇跡",
       "credit": "",
       "release": "AMENITY",
@@ -1271,7 +1364,6 @@
     },
     {
       "id": "song-092",
-      "highlightStart": 0,
       "title": "GO HARD",
       "credit": "",
       "release": "AMENITY",
@@ -1285,7 +1377,6 @@
     },
     {
       "id": "song-093",
-      "highlightStart": 0,
       "title": "マドラー",
       "credit": "",
       "release": "AMENITY",
@@ -1299,7 +1390,6 @@
     },
     {
       "id": "song-094",
-      "highlightStart": 0,
       "title": "show time...",
       "credit": "",
       "release": "AMENITY",
@@ -1313,7 +1403,6 @@
     },
     {
       "id": "song-095",
-      "highlightStart": 0,
       "title": "A PIECE OF CAKE",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1323,11 +1412,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "4QAj6rovkdQ",
       "youtubeUrl": "https://www.youtube.com/watch?v=4QAj6rovkdQ",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 55.3,
+      "youtubeEnd": 83.63,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 16,
+      "chorusTimingTrack": "A PIECE OF CAKE",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 195.918367
     },
     {
       "id": "song-096",
-      "highlightStart": 0,
       "title": "BREAKOUT",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1337,11 +1433,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "H0S28p3eoWs",
       "youtubeUrl": "https://www.youtube.com/watch?v=H0S28p3eoWs",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 47.71,
+      "youtubeEnd": 67.71,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "BREAKOUT",
+      "chorusTimingAlbum": "BREAKOUT",
+      "chorusTimingDuration": 180.216
     },
     {
       "id": "song-097",
-      "highlightStart": 0,
       "title": "CHARISMAX (English ver.)",
       "credit": "",
       "release": "CHARISMAX (English ver.) - Single",
@@ -1351,11 +1454,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "H8-qXiuo8g8",
       "youtubeUrl": "https://www.youtube.com/watch?v=H8-qXiuo8g8",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 43.35,
+      "youtubeEnd": 71.35,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "CHARISMAX (English ver.)",
+      "chorusTimingAlbum": "CHARISMAX (English ver.)",
+      "chorusTimingDuration": 179.0
     },
     {
       "id": "song-098",
-      "highlightStart": 0,
       "title": "Crazy F-R-E-S-H Beat",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1365,22 +1475,36 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "lfVfBqkk2Vo",
       "youtubeUrl": "https://www.youtube.com/watch?v=lfVfBqkk2Vo",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 66.68,
+      "youtubeEnd": 99.97,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "Crazy F‐R‐E‐S‐H Beat",
+      "chorusTimingAlbum": "THE BEST 2020–2025",
+      "chorusTimingDuration": 227.0
     },
     {
       "id": "song-099",
-      "highlightStart": 0,
       "title": "Cry out",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8d/b2/67/8db26737-ed5e-5f3f-f6ea-208038191938/mzaf_3340596172545426938.plus.aac.p.m4a",
       "trackViewUrl": "https://music.apple.com/jp/album/cry-out/1804833044?i=1804833309&uo=4",
       "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a7/35/d1/a735d155-d316-d9ea-19d2-d18c9aa2fb8b/ANTCD-A0000016546.jpg/100x100bb.jpg",
-      "source": "Apple Music preview / iTunes Search API"
+      "source": "Apple Music preview / iTunes Search API",
+      "youtubeStart": 60.07,
+      "youtubeEnd": 80.07,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "Cry out",
+      "chorusTimingAlbum": "i DO ME [初回盤A]",
+      "chorusTimingDuration": 234.60575
     },
     {
       "id": "song-100",
-      "highlightStart": 0,
       "title": "DA BOMB",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1390,11 +1514,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "BxXi3fg2Od8",
       "youtubeUrl": "https://www.youtube.com/watch?v=BxXi3fg2Od8",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 45.48,
+      "youtubeEnd": 65.48,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 3,
+      "chorusTimingTrack": "DA BOMB",
+      "chorusTimingAlbum": "Dangerholic",
+      "chorusTimingDuration": 215.617875
     },
     {
       "id": "song-101",
-      "highlightStart": 0,
       "title": "Dangerholic",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1404,11 +1535,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "i-PnC1tYnGM",
       "youtubeUrl": "https://www.youtube.com/watch?v=i-PnC1tYnGM",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 60.46,
+      "youtubeEnd": 80.46,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "Dangerholic",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 232.0
     },
     {
       "id": "song-102",
-      "highlightStart": 0,
       "title": "Dear,",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1418,11 +1556,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "oNwT7i2IlbM",
       "youtubeUrl": "https://www.youtube.com/watch?v=oNwT7i2IlbM",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 63.06,
+      "youtubeEnd": 83.06,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "Dear,",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 239.856327
     },
     {
       "id": "song-103",
-      "highlightStart": 0,
       "title": "EVERYTHING IS EVERYTHING",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1436,7 +1581,6 @@
     },
     {
       "id": "song-104",
-      "highlightStart": 0,
       "title": "Grandeur",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1446,11 +1590,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "7RyewjSWnFo",
       "youtubeUrl": "https://www.youtube.com/watch?v=7RyewjSWnFo",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 46.52,
+      "youtubeEnd": 77.38,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 9,
+      "chorusTimingTrack": "Grandeur",
+      "chorusTimingAlbum": "null",
+      "chorusTimingDuration": 217.0
     },
     {
       "id": "song-105",
-      "highlightStart": 0,
       "title": "Happy Birthday",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1460,11 +1611,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "89r9JCAdaeY",
       "youtubeUrl": "https://www.youtube.com/watch?v=89r9JCAdaeY",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 52.19,
+      "youtubeEnd": 80.19,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "Happy Birthday",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 224.496327
     },
     {
       "id": "song-106",
-      "highlightStart": 0,
       "title": "HELLO HELLO",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1478,7 +1636,6 @@
     },
     {
       "id": "song-107",
-      "highlightStart": 0,
       "title": "Hip bounce!!",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1492,7 +1649,6 @@
     },
     {
       "id": "song-108",
-      "highlightStart": 0,
       "title": "JUICY",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1502,11 +1658,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "48ZWn81y9cQ",
       "youtubeUrl": "https://www.youtube.com/watch?v=48ZWn81y9cQ",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 65.59,
+      "youtubeEnd": 93.59,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 12,
+      "chorusTimingTrack": "JUICY",
+      "chorusTimingAlbum": "SnowLabo.S2",
+      "chorusTimingDuration": 207.830204
     },
     {
       "id": "song-109",
-      "highlightStart": 0,
       "title": "Julietta",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1516,11 +1679,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "48WU69CXMLA",
       "youtubeUrl": "https://www.youtube.com/watch?v=48WU69CXMLA",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 81.1,
+      "youtubeEnd": 117.61,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 16,
+      "chorusTimingTrack": "Julietta",
+      "chorusTimingAlbum": "i DO ME",
+      "chorusTimingDuration": 263.105306
     },
     {
       "id": "song-110",
-      "highlightStart": 0,
       "title": "KANPAI Year!!",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1534,7 +1704,6 @@
     },
     {
       "id": "song-111",
-      "highlightStart": 0,
       "title": "KISSIN' MY LIPS",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1544,11 +1713,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "gsR-bbdGn_I",
       "youtubeUrl": "https://www.youtube.com/watch?v=gsR-bbdGn_I",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 106.3,
+      "youtubeEnd": 134.3,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 9,
+      "chorusTimingTrack": "KISSIN MY LIPS",
+      "chorusTimingAlbum": "Snow Mania S1",
+      "chorusTimingDuration": 203.911875
     },
     {
       "id": "song-112",
-      "highlightStart": 0,
       "title": "LOVE TRIGGER",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1558,11 +1734,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "eybKo4WgvgU",
       "youtubeUrl": "https://www.youtube.com/watch?v=eybKo4WgvgU",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 57.43,
+      "youtubeEnd": 88.96,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 10,
+      "chorusTimingTrack": "LOVE TRIGGER",
+      "chorusTimingAlbum": "RAYS",
+      "chorusTimingDuration": 234.624
     },
     {
       "id": "song-113",
-      "highlightStart": 0,
       "title": "Nine Snow Flash",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1576,7 +1759,6 @@
     },
     {
       "id": "song-114",
-      "highlightStart": 0,
       "title": "One",
       "credit": "",
       "release": "One - Single",
@@ -1586,11 +1768,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "PAKZveTVsSs",
       "youtubeUrl": "https://www.youtube.com/watch?v=PAKZveTVsSs",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 62.29,
+      "youtubeEnd": 90.29,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 7,
+      "chorusTimingTrack": "one",
+      "chorusTimingAlbum": "blue lock vs. u-20 japan ed",
+      "chorusTimingDuration": 220.0
     },
     {
       "id": "song-115",
-      "highlightStart": 0,
       "title": "Party! Party! Party!",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1600,11 +1789,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "B07qQ9p0QwI",
       "youtubeUrl": "https://www.youtube.com/watch?v=B07qQ9p0QwI",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 68.82,
+      "youtubeEnd": 101.42,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 8,
+      "chorusTimingTrack": "Party! Party! Party!",
+      "chorusTimingAlbum": "THE BEST 2020–2025",
+      "chorusTimingDuration": 231.0
     },
     {
       "id": "song-116",
-      "highlightStart": 0,
       "title": "POWEEEEER",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1614,11 +1810,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "UXUDaRLWr3Y",
       "youtubeUrl": "https://www.youtube.com/watch?v=UXUDaRLWr3Y",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 44.4,
+      "youtubeEnd": 72.4,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "POWEEEEER",
+      "chorusTimingAlbum": "THE BEST 2020–2025",
+      "chorusTimingDuration": 210.0
     },
     {
       "id": "song-117",
-      "highlightStart": 0,
       "title": "Ready Go Round",
       "credit": "",
       "release": "Ready Go Round - Single",
@@ -1632,7 +1835,6 @@
     },
     {
       "id": "song-118",
-      "highlightStart": 0,
       "title": "SBY",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1642,11 +1844,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "pSp2AAGB27M",
       "youtubeUrl": "https://www.youtube.com/watch?v=pSp2AAGB27M",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 45.59,
+      "youtubeEnd": 73.59,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "SBY",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 191.425306
     },
     {
       "id": "song-119",
-      "highlightStart": 0,
       "title": "slow...",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1656,11 +1865,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "aHMfRAGEE5Q",
       "youtubeUrl": "https://www.youtube.com/watch?v=aHMfRAGEE5Q",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 42.75,
+      "youtubeEnd": 70.75,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "slow...",
+      "chorusTimingAlbum": "THE BEST 2020–2025",
+      "chorusTimingDuration": 176.0
     },
     {
       "id": "song-120",
-      "highlightStart": 0,
       "title": "Snow Man's Life",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1674,7 +1890,6 @@
     },
     {
       "id": "song-121",
-      "highlightStart": 0,
       "title": "Stories",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1684,11 +1899,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "M6m5JEfQ-U0",
       "youtubeUrl": "https://www.youtube.com/watch?v=M6m5JEfQ-U0",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 64.59,
+      "youtubeEnd": 92.59,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "Stories",
+      "chorusTimingAlbum": "ブラッククローバー 主題歌ベスト 2",
+      "chorusTimingDuration": 211.0
     },
     {
       "id": "song-122",
-      "highlightStart": 0,
       "title": "Sugar",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1702,7 +1924,6 @@
     },
     {
       "id": "song-123",
-      "highlightStart": 0,
       "title": "Super Sexy",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1716,7 +1937,6 @@
     },
     {
       "id": "song-124",
-      "highlightStart": 0,
       "title": "Tic Tac Toe",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1730,7 +1950,6 @@
     },
     {
       "id": "song-125",
-      "highlightStart": 0,
       "title": "W",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1740,11 +1959,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "ZM0-sFDZKTk",
       "youtubeUrl": "https://www.youtube.com/watch?v=ZM0-sFDZKTk",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 67.27,
+      "youtubeEnd": 103.37,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 9,
+      "chorusTimingTrack": "W (Instrumental)",
+      "chorusTimingAlbum": "タペストリー / W",
+      "chorusTimingDuration": 258.0
     },
     {
       "id": "song-126",
-      "highlightStart": 0,
       "title": "We'll go together",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1754,11 +1980,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "urCyg2xNuoU",
       "youtubeUrl": "https://www.youtube.com/watch?v=urCyg2xNuoU",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 65.66,
+      "youtubeEnd": 93.66,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "We’ll go together",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 271.333878
     },
     {
       "id": "song-127",
-      "highlightStart": 0,
       "title": "イチバンボシ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1768,11 +2001,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "_mQ9YKMdV5k",
       "youtubeUrl": "https://www.youtube.com/watch?v=_mQ9YKMdV5k",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 60.25,
+      "youtubeEnd": 88.25,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "イチバンボシ",
+      "chorusTimingAlbum": "ブラザービート",
+      "chorusTimingDuration": 259.0
     },
     {
       "id": "song-128",
-      "highlightStart": 0,
       "title": "オレンジkiss",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1782,11 +2022,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "KBqCQpBGyV4",
       "youtubeUrl": "https://www.youtube.com/watch?v=KBqCQpBGyV4",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 70.39,
+      "youtubeEnd": 90.39,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "オレンジkiss",
+      "chorusTimingAlbum": "THE BEST 2020–2025",
+      "chorusTimingDuration": 261.0
     },
     {
       "id": "song-129",
-      "highlightStart": 0,
       "title": "クラクラ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1796,11 +2043,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "wDagC8f5DuM",
       "youtubeUrl": "https://www.youtube.com/watch?v=wDagC8f5DuM",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 38.14,
+      "youtubeEnd": 70.27,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 9,
+      "chorusTimingTrack": "クラクラ",
+      "chorusTimingAlbum": "i DO ME",
+      "chorusTimingDuration": 206.18449
     },
     {
       "id": "song-130",
-      "highlightStart": 0,
       "title": "スタートライン",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1810,11 +2064,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "odtOWeNWHWg",
       "youtubeUrl": "https://www.youtube.com/watch?v=odtOWeNWHWg",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 7.82,
+      "youtubeEnd": 35.82,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 3,
+      "chorusTimingTrack": "スタートライン",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 266.893061
     },
     {
       "id": "song-131",
-      "highlightStart": 0,
       "title": "タペストリー",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1824,22 +2085,36 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "TG3t4nKLnYI",
       "youtubeUrl": "https://www.youtube.com/watch?v=TG3t4nKLnYI",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 81.4,
+      "youtubeEnd": 109.4,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 3,
+      "chorusTimingTrack": "タペストリー",
+      "chorusTimingAlbum": "i DO ME",
+      "chorusTimingDuration": 238.84
     },
     {
       "id": "song-132",
-      "highlightStart": 0,
       "title": "ナミダの海を越えて行け",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/29/f8/9829f84f-eb40-1021-842b-d4d48113f0fd/mzaf_6308328876016857669.plus.aac.p.m4a",
       "trackViewUrl": "https://music.apple.com/jp/album/%E3%83%8A%E3%83%9F%E3%83%80%E3%81%AE%E6%B5%B7%E3%82%92%E8%B6%8A%E3%81%88%E3%81%A6%E8%A1%8C%E3%81%91/1804833044?i=1804833302&uo=4",
       "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a7/35/d1/a735d155-d316-d9ea-19d2-d18c9aa2fb8b/ANTCD-A0000016546.jpg/100x100bb.jpg",
-      "source": "Apple Music preview / iTunes Search API"
+      "source": "Apple Music preview / iTunes Search API",
+      "youtubeStart": 62.52,
+      "youtubeEnd": 100.38,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 11,
+      "chorusTimingTrack": "ナミダの海を越えて行け",
+      "chorusTimingAlbum": "Grandeur (AVCD-94956)",
+      "chorusTimingDuration": 238.0
     },
     {
       "id": "song-133",
-      "highlightStart": 0,
       "title": "ファンターナモーレ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1849,11 +2124,18 @@
       "source": "Apple Music preview / iTunes Search API",
       "youtubeVideoId": "LJZhclQAv48",
       "youtubeUrl": "https://www.youtube.com/watch?v=LJZhclQAv48",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 19.81,
+      "youtubeEnd": 47.81,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 5,
+      "chorusTimingTrack": "ファンターナモーレ",
+      "chorusTimingAlbum": "KISSIN' MY LIPS / Stories",
+      "chorusTimingDuration": 246.0
     },
     {
       "id": "song-134",
-      "highlightStart": 0,
       "title": "ブラザービート",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1867,7 +2149,6 @@
     },
     {
       "id": "song-135",
-      "highlightStart": 0,
       "title": "ボクとキミと",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1881,7 +2162,6 @@
     },
     {
       "id": "song-136",
-      "highlightStart": 0,
       "title": "ミッドナイト・トレンディ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1894,11 +2174,18 @@
       "youtubeChannel": "Snow Man",
       "youtubeDuration": 228,
       "youtubeUrl": "https://www.youtube.com/watch?v=CAHOwBaID_c",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 48.53,
+      "youtubeEnd": 82.06,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 9,
+      "chorusTimingTrack": "ミッドナイト・トレンディ",
+      "chorusTimingAlbum": "SnowLabo.S2",
+      "chorusTimingDuration": 299.0
     },
     {
       "id": "song-137",
-      "highlightStart": 0,
       "title": "僕という名のドラマ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1911,11 +2198,18 @@
       "youtubeChannel": "Snow Man",
       "youtubeDuration": 245,
       "youtubeUrl": "https://www.youtube.com/watch?v=rd_mDNmJklA",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 55.17,
+      "youtubeEnd": 84.19,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "僕という名のドラマ",
+      "chorusTimingAlbum": "THE BEST 2020–2025",
+      "chorusTimingDuration": 245.0
     },
     {
       "id": "song-138",
-      "highlightStart": 0,
       "title": "僕に大切にされてね。",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1928,11 +2222,18 @@
       "youtubeChannel": "Snow Man",
       "youtubeDuration": 244,
       "youtubeUrl": "https://www.youtube.com/watch?v=WdLNw17xHLc",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 59.87,
+      "youtubeEnd": 79.87,
+      "chorusTimingSource": "Musixmatch section structure + LRCLIB line-synchronised timestamps",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 4,
+      "chorusTimingTrack": "僕に大切にされてね。",
+      "chorusTimingAlbum": "オレンジkiss",
+      "chorusTimingDuration": 246.0
     },
     {
       "id": "song-139",
-      "highlightStart": 0,
       "title": "僕の彼女になってよ。",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1945,11 +2246,18 @@
       "youtubeChannel": "Snow Man",
       "youtubeDuration": 191,
       "youtubeUrl": "https://www.youtube.com/watch?v=OfEkgSYRFBA",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 77.46,
+      "youtubeEnd": 105.46,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "僕の彼女になってよ。",
+      "chorusTimingAlbum": "Secret Touch",
+      "chorusTimingDuration": 288.4604
     },
     {
       "id": "song-140",
-      "highlightStart": 0,
       "title": "君の彼氏になりたい。",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1962,11 +2270,18 @@
       "youtubeChannel": "Snow Man",
       "youtubeDuration": 231,
       "youtubeUrl": "https://www.youtube.com/watch?v=dbv6fDax_kQ",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 55.68,
+      "youtubeEnd": 83.68,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 7,
+      "chorusTimingTrack": "君の彼氏になりたい。",
+      "chorusTimingAlbum": "KISSIN' MY LIPS/Stories",
+      "chorusTimingDuration": 208.499833
     },
     {
       "id": "song-141",
-      "highlightStart": 0,
       "title": "君は僕のもの",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1979,11 +2294,18 @@
       "youtubeChannel": "Snow Man",
       "youtubeDuration": 282,
       "youtubeUrl": "https://www.youtube.com/watch?v=5P9WQMWm6kQ",
-      "youtubeSource": "YouTube official channel metadata"
+      "youtubeSource": "YouTube official channel metadata",
+      "youtubeStart": 93.84,
+      "youtubeEnd": 121.84,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "high",
+      "chorusTimingLines": 11,
+      "chorusTimingTrack": "君は僕のもの",
+      "chorusTimingAlbum": "THE BEST 2020 - 2025",
+      "chorusTimingDuration": 188.0
     },
     {
       "id": "song-142",
-      "highlightStart": 0,
       "title": "終わらない Memories",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -2000,17 +2322,113 @@
     },
     {
       "id": "song-143",
-      "highlightStart": 0,
       "title": "縁 -YUÁN-",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/77/54/d0/7754d08c-4136-c264-c4f8-2eec74d4d852/mzaf_11593923224818319921.plus.aac.p.m4a",
       "trackViewUrl": "https://music.apple.com/jp/album/%E7%B8%81-yu%C3%A1n/1804833044?i=1804833297&uo=4",
       "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a7/35/d1/a735d155-d316-d9ea-19d2-d18c9aa2fb8b/ANTCD-A0000016546.jpg/100x100bb.jpg",
-      "source": "Apple Music preview / iTunes Search API"
+      "source": "Apple Music preview / iTunes Search API",
+      "youtubeStart": 0.47,
+      "youtubeEnd": 36.63,
+      "chorusTimingSource": "LRCLIB line-synchronised lyrics; repeated chorus block",
+      "chorusTimingConfidence": "medium",
+      "chorusTimingLines": 6,
+      "chorusTimingTrack": "縁 -YUÁN-",
+      "chorusTimingAlbum": "HELLO HELLO",
+      "chorusTimingDuration": 240.0
     }
   ],
   "youtubeProvider": "YouTube official channel metadata (no audio downloaded)",
   "youtubeOfficialMatches": 137,
-  "youtubeFallbackCount": 6
+  "youtubeFallbackCount": 6,
+  "chorusTimingProvider": "Musixmatch section structure + LRCLIB synchronized lyric timestamps (cue seconds only; no lyrics stored)",
+  "chorusTimingMatches": 59,
+  "chorusTimingUnresolvedCount": 84,
+  "chorusTimingUnresolved": [
+    "Snow World",
+    "Big Bang Sweet",
+    "YumYumYum ～SpicyGirl～",
+    "Christmas wishes",
+    "My Sweet Girl",
+    "Wonderful! × Surprise!",
+    "Feel the light, Lovely",
+    "ANY & EVERY",
+    "NEXT",
+    "ココロヒトツ",
+    "ドレス&タキシード",
+    "What's your color?",
+    "ばきゅん",
+    "Infighter",
+    "TIKI TIKI",
+    "Delicious!!!",
+    "HELLO HELLO -Movie Ver.-",
+    "Be Proud!",
+    "GRATITUDE",
+    "Acrobatic",
+    "Boogie Woogie Baby",
+    "Vanishing Over",
+    "IX Guys Snow Man",
+    "Make It Hot",
+    "Lock on!",
+    "P.M.G.",
+    "ADDICTED TO LOVE",
+    "360m",
+    "Toxic Girl",
+    "Brand New Smile",
+    "BOOM BOOM LIGHT",
+    "キッタキッテナイ",
+    "Movin' up",
+    "This is LOVE",
+    "HYPNOSIS",
+    "ガラライキュ！",
+    "Color me live...",
+    "Super Deeper",
+    "8月の青",
+    "Two",
+    "Bass Bon",
+    "Vroom Vroom Vroom",
+    "Gotcha!",
+    "endless night",
+    "君へ贈る応援歌",
+    "これが愛じゃないのなら",
+    "ROCK 'N' ROLL",
+    "KATANA",
+    "GLITCH",
+    "Hot Flow",
+    "ナイトスケープ",
+    "星のうた",
+    "Spark!!",
+    "くちびる",
+    "約束は君と",
+    "愛のせいで",
+    "Symmetry",
+    "ART",
+    "地球(あい)してるぜ",
+    "サンシャインドリーマー",
+    "Nine Snow Charge!!",
+    "EVOLUTION",
+    "Secret Touch",
+    "あいことば",
+    "夏色花火",
+    "グッタイム",
+    "ALL SUITE",
+    "奇跡",
+    "GO HARD",
+    "マドラー",
+    "show time...",
+    "EVERYTHING IS EVERYTHING",
+    "HELLO HELLO",
+    "Hip bounce!!",
+    "KANPAI Year!!",
+    "Nine Snow Flash",
+    "Ready Go Round",
+    "Snow Man's Life",
+    "Sugar",
+    "Super Sexy",
+    "Tic Tac Toe",
+    "ブラザービート",
+    "ボクとキミと",
+    "終わらない Memories"
+  ]
 }
