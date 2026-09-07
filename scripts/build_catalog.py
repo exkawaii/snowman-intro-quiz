@@ -119,6 +119,69 @@ RECENT_OFFICIAL = [
     ("AMENITY", "show time...", ""),
 ]
 
+# Display the first official single/album rather than a later compilation such as THE BEST.
+# These names are intentionally the same labels used by Apple Music / the MENT discography.
+CANONICAL_RELEASES: dict[str, str] = {}
+
+
+def release_group(name: str, *titles: str) -> None:
+    for title in titles:
+        CANONICAL_RELEASES[title] = name
+
+
+release_group("D.D. (Selected Edition) - Single", "Snow World", "D.D.", "Crazy F-R-E-S-H Beat")
+release_group("Grandeur - EP", "Big Bang Sweet", "EVERYTHING IS EVERYTHING", "Grandeur", "ナミダの海を越えて行け")
+release_group("HELLO HELLO - EP", "YumYumYum ～SpicyGirl～", "HELLO HELLO", "Hip bounce!!", "縁 -YUÁN-")
+release_group("Secret Touch - EP", "Christmas wishes", "My Sweet Girl", "Secret Touch", "僕の彼女になってよ。")
+release_group("ブラザービート - EP", "REFRESH", "From Today", "ブラザービート", "イチバンボシ")
+release_group("オレンジkiss - EP", "Wonderful! × Surprise!", "Feel the light, Lovely", "オレンジkiss", "僕に大切にされてね。")
+release_group("タペストリー / W - EP", "Luv Classic", "NO SURRENDER !", "タペストリー", "W")
+release_group("Dangerholic - EP", "ANY & EVERY", "ベストフレンド", "DA BOMB", "Dangerholic")
+release_group("LOVE TRIGGER / We'll go together - EP", "NEXT", "ココロヒトツ", "LOVE TRIGGER", "We'll go together")
+release_group("BREAKOUT / 君は僕のもの - EP", "ドレス&タキシード", "What's your color?", "BREAKOUT", "君は僕のもの")
+release_group("SERIOUS - EP", "ばきゅん", "SERIOUS", "夏色花火", "Jack In The Box")
+release_group(
+    "Snow Mania S1",
+    "Infighter", "TIKI TIKI", "Delicious!!!", "HELLO HELLO -Movie Ver.-", "Be Proud!",
+    "GRATITUDE", "Acrobatic", "Boogie Woogie Baby", "Vanishing Over", "IX Guys Snow Man",
+    "Don't Hold Back", "Make It Hot", "Lock on!", "P.M.G.", "ADDICTED TO LOVE", "360m",
+    "EVOLUTION", "Party! Party! Party!", "Snow Man's Life", "Sugar", "Super Sexy", "終わらない Memories",
+)
+release_group(
+    "Snow Labo. S2",
+    "Toxic Girl", "Brand New Smile", "BOOM BOOM LIGHT", "キッタキッテナイ", "Movin' up",
+    "This is LOVE", "HYPNOSIS", "ガラライキュ！", "Color me live...", "Happy Birthday",
+    "JUICY", "Tic Tac Toe", "ボクとキミと", "ミッドナイト・トレンディ",
+)
+release_group(
+    "i DO ME",
+    "あいことば", "Ready Go Round", "Super Deeper", "POWEEEEER", "slow...", "Julietta",
+    "クラクラ", "8月の青", "Two", "Bass Bon", "Vroom Vroom Vroom", "Gotcha!",
+    "Cry out", "Nine Snow Flash", "僕という名のドラマ",
+)
+release_group(
+    "RAYS",
+    "リンディーララ", "endless night", "君へ贈る応援歌", "これが愛じゃないのなら", "ROCK 'N' ROLL",
+    "Wha cha cha", "KATANA", "GLITCH", "Hot Flow", "ナイトスケープ", "星のうた", "EMPIRE",
+    "KANPAI Year!!", "スタートライン",
+)
+release_group("One - Single", "One")
+release_group("KISSIN' MY LIPS / Stories - EP", "KISSIN' MY LIPS", "Stories", "ファンターナモーレ", "君の彼氏になりたい。")
+release_group("音故知新", "Spark!!", "くちびる", "嫉妬ガール", "Miss Brand-New Friday Night", "約束は君と", "Days", "愛のせいで", "Symmetry", "ART", "地球(あい)してるぜ", "サンシャインドリーマー", "Nine Snow Charge!!")
+release_group("TRUE LOVE - Single", "TRUE LOVE")
+release_group("BOOST - Single", "BOOST")
+release_group("悪戯な天使 - Single", "悪戯な天使")
+release_group("カリスマックス - Single", "カリスマックス")
+release_group("STARS - Single", "STARS")
+release_group("BANG!! - Single", "BANG!!")
+release_group("SAVE YOUR HEART - Single", "SAVE YOUR HEART")
+release_group("オドロウゼ! - Single", "オドロウゼ！")
+release_group("グッタイム - Single", "グッタイム")
+release_group("AMENITY", "ALL SUITE", "奇跡", "GO HARD", "マドラー", "show time...")
+release_group("CHARISMAX (English ver.) - Single", "CHARISMAX (English ver.)")
+release_group("THE BEST 2020 - 2025", "A PIECE OF CAKE", "Dear,", "SBY")
+
+
 ALIASES = {
     "オドロウゼ!": "オドロウゼ！",
     "Ⅸ Guys Snow Man": "IX Guys Snow Man",
@@ -247,12 +310,17 @@ def main() -> None:
             ordered.append(records.pop(k))
     ordered.extend(sorted(records.values(), key=lambda x: x["title"].casefold()))
 
+    for song in ordered:
+        canonical_release = CANONICAL_RELEASES.get(song["title"])
+        if canonical_release:
+            song["release"] = canonical_release
+
     payload = {
         "artist": "Snow Man",
         "lastUpdated": date.today().isoformat(),
         "count": len(ordered),
         "previewProvider": "Apple Music / iTunes Search API",
-        "songs": [dict({"id": f"song-{i+1:03d}"}, **song) for i, song in enumerate(ordered)],
+        "songs": [dict({"id": f"song-{i+1:03d}", "highlightStart": 0}, **song) for i, song in enumerate(ordered)],
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     available = sum(bool(song.get("previewUrl")) for song in ordered)
