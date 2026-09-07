@@ -254,6 +254,7 @@ kbd { display: inline-grid; place-items: center; width: 18px; height: 18px; marg
 .start-gate { min-height: 470px; display: grid; align-content: center; justify-items: center; text-align: center; }
 .start-gate .eyebrow { margin-bottom: 20px; }
 .start-gate h2 { margin: 0 0 18px; font-size: clamp(68px, 9vw, 125px); }
+.start-controls { display: flex; justify-content: center; align-items: end; gap: 12px; margin-bottom: 21px; text-align: left; }
 .start-note { margin-bottom: 28px; color: var(--muted); font-size: 13px; }
 .begin-button { min-width: 210px; }
 .answer-reveal { margin-top: 25px; padding: 16px; display: grid; grid-template-columns: 112px 1fr; gap: 18px; align-items: center; background: var(--ink); color: var(--white); animation: reveal-in .35s ease both; }
@@ -281,6 +282,8 @@ kbd { display: inline-grid; place-items: center; width: 18px; height: 18px; marg
   .game-page-section h1 { font-size: 64px; margin-bottom: 30px; }
   .game-settings { align-items: end; flex-wrap: wrap; }
   .game-settings .mode-picker { width: 180px; }
+  .start-controls { flex-wrap: wrap; }
+  .start-controls .mode-picker { width: 180px; }
   .answer-reveal { grid-template-columns: 82px 1fr; gap: 13px; padding: 12px; }
   .answer-art-frame { width: 82px; }
   .answer-art-frame > span { font-size: 27px; }

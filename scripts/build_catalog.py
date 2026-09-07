@@ -252,7 +252,7 @@ def main() -> None:
         "lastUpdated": date.today().isoformat(),
         "count": len(ordered),
         "previewProvider": "Apple Music / iTunes Search API",
-        "songs": [dict({"id": f"song-{i+1:03d}", "highlightStart": 8}, **song) for i, song in enumerate(ordered)],
+        "songs": [dict({"id": f"song-{i+1:03d}", "highlightStart": 0}, **song) for i, song in enumerate(ordered)],
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     available = sum(bool(song.get("previewUrl")) for song in ordered)

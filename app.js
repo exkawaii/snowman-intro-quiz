@@ -17,8 +17,6 @@ const els = {
   progressBar: $("#progress-bar"),
   score: $("#score"),
   streak: $("#streak"),
-  releasePill: $("#release-pill"),
-  trackCredit: $("#track-credit"),
   waveform: $("#waveform"),
   audioStage: $("#audio-stage"),
   audioCaptionLabel: $("#audio-caption-label"),
@@ -50,8 +48,8 @@ const els = {
 };
 
 const INTRO_SECONDS = 12;
-const DEFAULT_HIGHLIGHT_START = 8;
-const HIGHLIGHT_SECONDS = 18;
+const DEFAULT_HIGHLIGHT_START = 0;
+const HIGHLIGHT_SECONDS = 30;
 const state = {
   songs: [],
   remaining: [],
@@ -201,17 +199,15 @@ function resetAnswerReveal() {
 function renderQuestion() {
   const song = state.current;
   state.audioMode = "intro";
-  state.highlightStart = Number(song.highlightStart) || DEFAULT_HIGHLIGHT_START;
+  state.highlightStart = DEFAULT_HIGHLIGHT_START;
   state.highlightEnd = state.highlightStart + HIGHLIGHT_SECONDS;
   els.questionNumber.textContent = pad(state.questionIndex + 1);
   els.questionTotal.textContent = totalLabel();
   els.progressBar.style.width = `${(state.questionIndex / state.total) * 100}%`;
-  els.releasePill.textContent = displayRelease(song.release);
-  els.trackCredit.textContent = song.credit ? `UNIT / ${song.credit}` : "SNOW MAN";
   els.feedback.classList.add("hidden");
   els.feedback.classList.remove("is-wrong");
   resetAnswerReveal();
-  els.audioCaptionLabel.textContent = "INTRO / AUTO PLAY";
+  els.audioCaptionLabel.textContent = "INTRO PREVIEW";
   els.timeBar.style.width = "0%";
   els.timeLimit.textContent = formatTime(INTRO_SECONDS);
   setAudioStatus("LOADING INTRO");
@@ -220,7 +216,7 @@ function renderQuestion() {
   els.choices.innerHTML = state.choices.map((choice, index) => `
     <button class="choice" type="button" data-id="${choice.id}" data-index="${index}" aria-label="${index + 1} ${choice.title}">
       <span class="choice-number">${index + 1}</span>
-      <span><strong class="choice-title">${choice.title}</strong>${choice.credit ? `<small class="choice-credit">${choice.credit}</small>` : ""}</span>
+      <span><strong class="choice-title">${choice.title}</strong></span>
     </button>
   `).join("");
 
@@ -327,7 +323,7 @@ function finishGame() {
 async function playIntro() {
   if (!state.current || !state.current.previewUrl || state.answered) return;
   state.audioMode = "intro";
-  els.audioCaptionLabel.textContent = "INTRO / AUTO PLAY";
+  els.audioCaptionLabel.textContent = "INTRO PREVIEW";
   els.timeLimit.textContent = formatTime(INTRO_SECONDS);
   els.audio.currentTime = 0;
   try {
@@ -341,7 +337,7 @@ async function playIntro() {
 async function playHighlight() {
   if (!state.current || !state.current.previewUrl) return;
   state.audioMode = "highlight";
-  els.audioCaptionLabel.textContent = "CHORUS / HIGHLIGHT";
+  els.audioCaptionLabel.textContent = "HIGHLIGHT / 30 SEC";
   els.revealStatus.textContent = "PLAYING HIGHLIGHT";
   const startPlayback = async () => {
     const duration = Number.isFinite(els.audio.duration) ? els.audio.duration : state.highlightStart + HIGHLIGHT_SECONDS;
