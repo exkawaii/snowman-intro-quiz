@@ -312,6 +312,7 @@ async function playOfficialYouTube(song) {
       width: "100%",
       height: "220",
       videoId: song.youtubeVideoId,
+      host: "https://www.youtube-nocookie.com",
       playerVars: {
         autoplay: 0,
         controls: 1,
