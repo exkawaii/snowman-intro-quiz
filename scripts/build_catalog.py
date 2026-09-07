@@ -230,7 +230,10 @@ def is_snow_man(result: dict) -> bool:
 
 def choose_result(results: list[dict], title: str, album: str | None = None, unit: bool = False) -> dict | None:
     wanted = key(title)
-    candidates = [r for r in results if r.get("previewUrl") and key(r.get("trackName", "")) == wanted]
+    candidates = [
+        r for r in results
+        if r.get("previewUrl") and key(r.get("trackName", "")) == wanted and is_snow_man(r)
+    ]
     if album:
         album_candidates = [r for r in candidates if r.get("collectionName") == album]
         candidates = album_candidates or candidates
