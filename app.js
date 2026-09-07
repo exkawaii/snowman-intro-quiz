@@ -32,7 +32,10 @@ const els = {
   answerRelease: $("#answer-release"),
   answerSongTitle: $("#answer-song-title"),
   answerSongCredit: $("#answer-song-credit"),
+  answerRevealLabel: $("#answer-reveal-label"),
   revealStatus: $("#reveal-status"),
+  youtubePlayerShell: $("#youtube-player-shell"),
+  youtubeSourceLink: $("#youtube-source-link"),
   feedback: $("#feedback"),
   feedbackLabel: $("#feedback-label"),
   feedbackTitle: $("#feedback-title"),
@@ -65,6 +68,8 @@ const state = {
   highlightStart: DEFAULT_HIGHLIGHT_START,
   highlightEnd: DEFAULT_HIGHLIGHT_START + HIGHLIGHT_SECONDS,
 };
+let youtubePlayer = null;
+let youtubeApiPromise = null;
 
 function shuffle(items) {
   const copy = [...items];
@@ -186,14 +191,18 @@ function buildChoices(answer) {
 }
 
 function resetAnswerReveal() {
+  if (youtubePlayer && typeof youtubePlayer.stopVideo === "function") youtubePlayer.stopVideo();
   els.answerReveal.classList.add("hidden");
+  els.youtubePlayerShell.classList.add("hidden");
+  els.youtubeSourceLink.href = "#";
   els.answerArtwork.removeAttribute("src");
   els.answerArtwork.classList.add("hidden");
   els.answerArtFallback.classList.remove("hidden");
   els.answerRelease.textContent = "";
   els.answerSongTitle.textContent = "";
   els.answerSongCredit.textContent = "";
-  els.revealStatus.textContent = "PLAYING HIGHLIGHT";
+  els.answerRevealLabel.textContent = "TRACK HIGHLIGHT / OFFICIAL VIDEO";
+  els.revealStatus.textContent = "LOADING OFFICIAL VIDEO";
 }
 
 function renderQuestion() {
@@ -259,6 +268,89 @@ function showAnswerReveal(song) {
   }
 }
 
+function loadYouTubeApi() {
+  if (window.YT && window.YT.Player) return Promise.resolve();
+  if (youtubeApiPromise) return youtubeApiPromise;
+  youtubeApiPromise = new Promise((resolve, reject) => {
+    const previousCallback = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      if (typeof previousCallback === "function") previousCallback();
+      resolve();
+    };
+    const script = document.createElement("script");
+    script.src = "https://www.youtube.com/iframe_api";
+    script.async = true;
+    script.onerror = () => reject(new Error("YouTube IFrame API failed to load"));
+    document.head.appendChild(script);
+  });
+  return youtubeApiPromise;
+}
+
+function youtubeWindow(song) {
+  const start = Number.isFinite(Number(song.youtubeStart)) ? Number(song.youtubeStart) : 0;
+  const explicitEnd = Number.isFinite(Number(song.youtubeEnd)) ? Number(song.youtubeEnd) : null;
+  return { start, end: explicitEnd && explicitEnd > start ? explicitEnd : null };
+}
+
+async function playOfficialYouTube(song) {
+  if (!song.youtubeVideoId) return false;
+  stopAudio(true);
+  state.audioMode = "youtube";
+  els.youtubePlayerShell.classList.remove("hidden");
+  els.youtubeSourceLink.href = song.youtubeUrl || `https://www.youtube.com/watch?v=${song.youtubeVideoId}`;
+  els.answerRevealLabel.textContent = "TRACK HIGHLIGHT / OFFICIAL VIDEO";
+  els.revealStatus.textContent = "LOADING OFFICIAL VIDEO";
+  const range = youtubeWindow(song);
+  await loadYouTubeApi();
+  const loadVideo = (player) => {
+    const video = { videoId: song.youtubeVideoId, startSeconds: range.start };
+    if (range.end) video.endSeconds = range.end;
+    player.loadVideoById(video);
+  };
+  if (!youtubePlayer) {
+    youtubePlayer = new window.YT.Player("youtube-player", {
+      width: "100%",
+      height: "220",
+      videoId: song.youtubeVideoId,
+      playerVars: {
+        autoplay: 0,
+        controls: 1,
+        playsinline: 1,
+        rel: 0,
+        origin: window.location.origin,
+      },
+      events: {
+        onReady: (event) => loadVideo(event.target),
+        onStateChange: (event) => {
+          if (event.data === window.YT.PlayerState.PLAYING) els.revealStatus.textContent = "PLAYING OFFICIAL VIDEO";
+          if (event.data === window.YT.PlayerState.ENDED) els.revealStatus.textContent = "OFFICIAL CLIP ENDED";
+        },
+        onAutoplayBlocked: () => { els.revealStatus.textContent = "PRESS PLAY IN VIDEO"; },
+        onError: () => {
+          els.revealStatus.textContent = "YOUTUBE UNAVAILABLE / USING PREVIEW";
+          els.youtubePlayerShell.classList.add("hidden");
+          playHighlight();
+        },
+      },
+    });
+  } else {
+    loadVideo(youtubePlayer);
+  }
+  return true;
+}
+
+async function playAnswerMedia(song) {
+  if (song.youtubeVideoId) {
+    try {
+      const loaded = await playOfficialYouTube(song);
+      if (loaded) return;
+    } catch (error) {
+      els.revealStatus.textContent = "YOUTUBE UNAVAILABLE / USING PREVIEW";
+    }
+  }
+  playHighlight();
+}
+
 function answerQuestion(id) {
   if (state.answered || !state.current) return;
   state.answered = true;
@@ -290,7 +382,7 @@ function answerQuestion(id) {
 
   if (isCorrect) {
     showAnswerReveal(state.current);
-    playHighlight();
+    playAnswerMedia(state.current);
   }
 
   state.questionIndex += 1;
@@ -301,6 +393,7 @@ function answerQuestion(id) {
 
 function finishGame() {
   stopAudio(true);
+  resetAnswerReveal();
   els.questionArea.classList.add("hidden");
   els.resultArea.classList.remove("hidden");
   els.progressBar.style.width = "100%";
@@ -337,6 +430,8 @@ async function playIntro() {
 async function playHighlight() {
   if (!state.current || !state.current.previewUrl) return;
   state.audioMode = "highlight";
+  els.youtubePlayerShell.classList.add("hidden");
+  els.answerRevealLabel.textContent = "TRACK HIGHLIGHT / 30 SEC PREVIEW";
   els.audioCaptionLabel.textContent = "HIGHLIGHT / 30 SEC";
   els.revealStatus.textContent = "PLAYING HIGHLIGHT";
   const startPlayback = async () => {

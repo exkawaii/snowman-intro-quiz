@@ -267,6 +267,10 @@ kbd { display: inline-grid; place-items: center; width: 18px; height: 18px; marg
 .answer-reveal-copy h3 { margin: 0; font-size: clamp(20px, 3vw, 32px); line-height: 1.1; letter-spacing: -.04em; }
 .answer-song-credit { margin: 0; color: #c8c2b8; font-size: 10px; line-height: 1.4; }
 .reveal-status { margin-top: 6px; color: var(--accent-soft); font: 500 9px var(--mono); letter-spacing: .08em; }
+.youtube-player-shell { grid-column: 1 / -1; margin-top: 2px; padding: 12px; background: #0e0e0e; }
+.youtube-player-shell > div { width: 100%; min-height: 200px; aspect-ratio: 16 / 9; }
+.youtube-player-shell iframe { width: 100%; height: 100%; display: block; }
+.youtube-source-link { display: inline-block; margin-top: 10px; color: #d6d1c7; border-bottom: 1px solid #777; padding-bottom: 4px; font: 500 10px var(--mono); }
 @keyframes reveal-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 900px) {
@@ -285,6 +289,7 @@ kbd { display: inline-grid; place-items: center; width: 18px; height: 18px; marg
   .start-controls { flex-wrap: wrap; }
   .start-controls .mode-picker { width: 180px; }
   .answer-reveal { grid-template-columns: 82px 1fr; gap: 13px; padding: 12px; }
+  .youtube-player-shell { grid-column: 1 / -1; }
   .answer-art-frame { width: 82px; }
   .answer-art-frame > span { font-size: 27px; }
   .answer-reveal-copy h3 { font-size: 21px; }
