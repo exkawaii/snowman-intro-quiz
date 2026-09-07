@@ -119,6 +119,20 @@ RECENT_OFFICIAL = [
     ("AMENITY", "show time...", ""),
 ]
 
+# The nine member solo tracks from THE BEST are kept as a separate catalog so the
+# existing group/unit catalog keeps its original meaning and question pool.
+MEMBER_SOLO = [
+    ("THE BEST 2020 - 2025", "7%", "岩本照", 1804833311),
+    ("THE BEST 2020 - 2025", "iro iro", "深澤辰哉", 1804833312),
+    ("THE BEST 2020 - 2025", "Induction", "ラウール", 1804833313),
+    ("THE BEST 2020 - 2025", "オトノナルホウヘ", "渡辺翔太", 1804833314),
+    ("THE BEST 2020 - 2025", "ファインダー", "向井康二", 1804833315),
+    ("THE BEST 2020 - 2025", "いっそ、嫌いになれたら。", "阿部亮平", 1804833316),
+    ("THE BEST 2020 - 2025", "朝の時間", "目黒蓮", 1804833317),
+    ("THE BEST 2020 - 2025", "I・だって止まらない", "宮舘涼太", 1804833318),
+    ("THE BEST 2020 - 2025", "守りたい、その笑顔", "佐久間大介", 1804833319),
+]
+
 # Display the first official single/album rather than a later compilation such as THE BEST.
 # These names are intentionally the same labels used by Apple Music / the MENT discography.
 CANONICAL_RELEASES: dict[str, str] = {}
@@ -221,6 +235,12 @@ def search(term: str, limit: int = 25) -> list[dict]:
     return get_json(f"https://itunes.apple.com/search?{params}").get("results", [])
 
 
+def lookup_track(track_id: int) -> dict | None:
+    params = urllib.parse.urlencode({"id": str(track_id), "entity": "song", "country": "JP"})
+    results = get_json(f"https://itunes.apple.com/lookup?{params}").get("results", [])
+    return next((result for result in results if result.get("trackId") == track_id), None)
+
+
 def is_snow_man(result: dict) -> bool:
     artist = result.get("artistName", "")
     return artist == "Snow Man" or result.get("collectionName") in {
@@ -242,9 +262,36 @@ def choose_result(results: list[dict], title: str, album: str | None = None, uni
     return candidates[0] if candidates else None
 
 
+def snapshot_record(song: dict, category: str) -> dict:
+    fields = ("title", "credit", "release", "previewUrl", "trackViewUrl", "artworkUrl", "source")
+    record = {field: song.get(field) for field in fields}
+    record["category"] = category
+    return record
+
+
 def main() -> None:
-    raw_results = search("Snow Man", 200)
-    records: dict[str, dict] = {}
+    previous_group: dict[str, dict] = {}
+    previous_solo: dict[str, dict] = {}
+    if OUT.exists():
+        try:
+            previous = json.loads(OUT.read_text(encoding="utf-8"))
+            for song in previous.get("songs", []):
+                if not song.get("title") or not song.get("previewUrl"):
+                    continue
+                category = song.get("category", "group-unit")
+                target = previous_solo if category == "member-solo" else previous_group
+                target[key(song["title"])] = snapshot_record(song, category)
+        except (OSError, json.JSONDecodeError):
+            pass
+
+    try:
+        raw_results = search("Snow Man", 200)
+    except Exception as error:
+        if not previous_group:
+            raise
+        print(f"Apple catalog search unavailable; preserving the existing snapshot ({error})")
+        raw_results = []
+    records: dict[str, dict] = dict(previous_group)
 
     # First add the full Apple catalog snapshot for Snow Man as the broadest current streaming set.
     for result in raw_results:
@@ -258,6 +305,7 @@ def main() -> None:
             "previewUrl": result.get("previewUrl"),
             "trackViewUrl": result.get("trackViewUrl"),
             "artworkUrl": result.get("artworkUrl100"),
+            "category": "group-unit",
             "source": "Apple Music preview / iTunes Search API",
         })
 
@@ -272,13 +320,16 @@ def main() -> None:
             "previewUrl": None,
             "trackViewUrl": None,
             "artworkUrl": None,
+            "category": "group-unit",
             "source": "MENT RECORDING official discography",
         })
         record["title"] = title
         record["credit"] = credit
+        record["category"] = "group-unit"
         if record.get("release") in (None, "", "Snow Man") or album in {"Snow Mania S1", "Snow Labo. S2", "i DO ME", "RAYS", "音故知新"}:
             record["release"] = album
-        if record.get("previewUrl"):
+        canonical_album = CANONICAL_RELEASES.get(title)
+        if record.get("previewUrl") and (key(title) in previous_group or not canonical_album):
             continue
 
         search_title = title
@@ -290,16 +341,47 @@ def main() -> None:
             search_title = "HELLO HELLO (Movie Ver.)"
         elif title == "YumYumYum ～SpicyGirl～":
             search_title = "YumYumYum ~SpicyGirl~"
-        candidates = search(search_title, 25)
-        chosen = choose_result(candidates, title, album if album in {"Snow Mania S1", "Snow Labo. S2", "i DO ME", "RAYS", "音故知新"} else None, bool(credit))
+        try:
+            candidates = search(search_title, 25)
+        except Exception as error:
+            print(f"Apple search unavailable for {title}; keeping the existing record ({error})")
+            candidates = []
+        target_album = canonical_album or (album if album in {"Snow Mania S1", "Snow Labo. S2", "i DO ME", "RAYS", "音故知新"} else None)
+        chosen = choose_result(candidates, title, target_album, bool(credit))
         if not chosen:
             # Search against the raw Apple spelling for aliases such as 地球してるぜ and ゆめ variants.
             chosen = next((r for r in candidates if r.get("previewUrl") and is_snow_man(r)), None)
+        if not chosen and title == "Two":
+            # Apple search can intermittently omit this unit's preview; use its verified track ID.
+            chosen = lookup_track(6769372001)
         if chosen:
             record["previewUrl"] = chosen.get("previewUrl")
             record["trackViewUrl"] = chosen.get("trackViewUrl")
             record["artworkUrl"] = chosen.get("artworkUrl100")
             record["source"] = "MENT RECORDING official discography + Apple Music preview"
+
+    solo_records = []
+    for album, title, member, track_id in MEMBER_SOLO:
+        solo_key = key(title)
+        if solo_key in previous_solo:
+            solo_records.append(previous_solo[solo_key])
+            continue
+        try:
+            result = lookup_track(track_id)
+        except Exception as error:
+            raise RuntimeError(f"Apple solo track lookup failed: {title} ({track_id})") from error
+        if not result or result.get("artistName") != member or not result.get("previewUrl"):
+            raise RuntimeError(f"Apple solo track verification failed: {title} ({track_id})")
+        solo_records.append({
+            "title": canonical(title),
+            "credit": member,
+            "release": album,
+            "previewUrl": result.get("previewUrl"),
+            "trackViewUrl": result.get("trackViewUrl"),
+            "artworkUrl": result.get("artworkUrl100"),
+            "category": "member-solo",
+            "source": "Snow Man official discography + Apple Music preview",
+        })
 
     # Keep a deterministic order: newest/current official additions first, then the remaining catalog alphabetically.
     official_keys = []
@@ -312,16 +394,22 @@ def main() -> None:
         if k in records:
             ordered.append(records.pop(k))
     ordered.extend(sorted(records.values(), key=lambda x: x["title"].casefold()))
+    ordered.extend(solo_records)
 
     for song in ordered:
+        song.setdefault("category", "group-unit")
         canonical_release = CANONICAL_RELEASES.get(song["title"])
         if canonical_release:
             song["release"] = canonical_release
 
+    group_unit_count = sum(song["category"] == "group-unit" for song in ordered)
+    member_solo_count = sum(song["category"] == "member-solo" for song in ordered)
     payload = {
         "artist": "Snow Man",
         "lastUpdated": date.today().isoformat(),
         "count": len(ordered),
+        "groupUnitCount": group_unit_count,
+        "memberSoloCount": member_solo_count,
         "previewProvider": "Apple Music / iTunes Search API",
         "songs": [dict({"id": f"song-{i+1:03d}", "highlightStart": 0}, **song) for i, song in enumerate(ordered)],
     }
