@@ -3,12 +3,15 @@ const $ = (selector) => document.querySelector(selector);
 const els = {
   audio: $("#audio"),
   headerCount: $("#header-count"),
-  catalogCount: $("#catalog-count"),
   loading: $("#loading-state"),
+  startGate: $("#start-gate"),
+  beginGame: $("#begin-game"),
   topbar: $("#game-topbar"),
   questionArea: $("#question-area"),
   resultArea: $("#result-area"),
   roundCount: $("#round-count"),
+  customRoundWrap: $("#custom-round-wrap"),
+  customRoundCount: $("#custom-round-count"),
   questionNumber: $("#question-number"),
   questionTotal: $("#question-total"),
   progressBar: $("#progress-bar"),
@@ -18,14 +21,21 @@ const els = {
   trackCredit: $("#track-credit"),
   waveform: $("#waveform"),
   audioStage: $("#audio-stage"),
+  audioCaptionLabel: $("#audio-caption-label"),
   audioStatus: $("#audio-status"),
   playButton: $("#play-button"),
   playText: $(".play-text"),
   timeBar: $("#time-bar"),
   timeLimit: $("#time-limit"),
   choices: $("#choices"),
+  answerReveal: $("#answer-reveal"),
+  answerArtwork: $("#answer-artwork"),
+  answerArtFallback: $("#answer-art-fallback"),
+  answerRelease: $("#answer-release"),
+  answerSongTitle: $("#answer-song-title"),
+  answerSongCredit: $("#answer-song-credit"),
+  revealStatus: $("#reveal-status"),
   feedback: $("#feedback"),
-  feedbackIcon: $("#feedback-icon"),
   feedbackLabel: $("#feedback-label"),
   feedbackTitle: $("#feedback-title"),
   feedbackNote: $("#feedback-note"),
@@ -39,7 +49,9 @@ const els = {
   retryButton: $("#retry-button"),
 };
 
-const PREVIEW_SECONDS = 12;
+const INTRO_SECONDS = 12;
+const DEFAULT_HIGHLIGHT_START = 8;
+const HIGHLIGHT_SECONDS = 18;
 const state = {
   songs: [],
   remaining: [],
@@ -50,6 +62,10 @@ const state = {
   score: 0,
   streak: 0,
   answered: false,
+  started: false,
+  audioMode: "intro",
+  highlightStart: DEFAULT_HIGHLIGHT_START,
+  highlightEnd: DEFAULT_HIGHLIGHT_START + HIGHLIGHT_SECONDS,
 };
 
 function shuffle(items) {
@@ -86,15 +102,26 @@ function renderWaveform() {
 }
 
 function updateCatalogCount() {
-  const count = state.songs.length;
-  els.headerCount.textContent = `${count} TRACKS READY`;
-  els.catalogCount.textContent = String(count).padStart(3, "0");
+  els.headerCount.textContent = `${state.songs.length} TRACKS READY`;
+  els.customRoundCount.max = String(state.songs.length);
 }
 
 function setLoading(loading) {
   els.loading.classList.toggle("hidden", !loading);
-  els.topbar.classList.toggle("hidden", loading);
-  els.questionArea.classList.toggle("hidden", loading);
+  if (loading) {
+    els.startGate.classList.add("hidden");
+    els.topbar.classList.add("hidden");
+    els.questionArea.classList.add("hidden");
+    els.resultArea.classList.add("hidden");
+  }
+}
+
+function syncCustomControls() {
+  const isCustom = els.roundCount.value === "custom";
+  els.customRoundWrap.classList.toggle("hidden", !isCustom);
+  if (state.songs.length) {
+    els.customRoundCount.max = String(state.songs.length);
+  }
 }
 
 function setAudioStatus(text) {
@@ -102,10 +129,11 @@ function setAudioStatus(text) {
 }
 
 function setPlayButton(isPlaying) {
+  const isHighlight = state.audioMode === "highlight";
   els.playButton.classList.toggle("is-playing", isPlaying);
-  els.playText.textContent = isPlaying ? "PAUSE INTRO" : "PLAY INTRO";
+  els.playText.textContent = isPlaying ? (isHighlight ? "PAUSE HIGHLIGHT" : "PAUSE INTRO") : (isHighlight ? "PLAY HIGHLIGHT" : "PLAY INTRO");
   els.audioStage.classList.toggle("is-playing", isPlaying);
-  els.playButton.setAttribute("aria-label", isPlaying ? "イントロを一時停止" : "イントロを再生");
+  els.playButton.setAttribute("aria-label", isPlaying ? "再生を一時停止" : (isHighlight ? "ハイライトを再生" : "イントロを再生"));
 }
 
 function stopAudio(reset = false) {
@@ -118,8 +146,19 @@ function stopAudio(reset = false) {
 }
 
 function getRoundTotal() {
-  const selected = els.roundCount.value;
-  return selected === "all" ? state.songs.length : Number(selected);
+  if (els.roundCount.value === "all") return state.songs.length;
+  if (els.roundCount.value === "custom") {
+    const requested = Number.parseInt(els.customRoundCount.value, 10);
+    const safe = Number.isFinite(requested) ? requested : 1;
+    const total = Math.min(Math.max(safe, 1), state.songs.length);
+    els.customRoundCount.value = String(total);
+    return total;
+  }
+  return Math.min(Number(els.roundCount.value), state.songs.length);
+}
+
+function totalLabel() {
+  return els.roundCount.value === "all" ? "ALL" : pad(state.total);
 }
 
 function startGame() {
@@ -132,9 +171,11 @@ function startGame() {
   state.questionIndex = 0;
   state.score = 0;
   state.streak = 0;
+  state.started = true;
   els.score.textContent = "00";
   els.streak.textContent = "00";
-  els.questionTotal.textContent = state.total === state.songs.length && els.roundCount.value === "all" ? "ALL" : pad(state.total);
+  els.questionTotal.textContent = totalLabel();
+  els.startGate.classList.add("hidden");
   els.resultArea.classList.add("hidden");
   els.topbar.classList.remove("hidden");
   els.questionArea.classList.remove("hidden");
@@ -146,18 +187,34 @@ function buildChoices(answer) {
   return shuffle([answer, ...distractors]);
 }
 
+function resetAnswerReveal() {
+  els.answerReveal.classList.add("hidden");
+  els.answerArtwork.removeAttribute("src");
+  els.answerArtwork.classList.add("hidden");
+  els.answerArtFallback.classList.remove("hidden");
+  els.answerRelease.textContent = "";
+  els.answerSongTitle.textContent = "";
+  els.answerSongCredit.textContent = "";
+  els.revealStatus.textContent = "PLAYING HIGHLIGHT";
+}
+
 function renderQuestion() {
   const song = state.current;
+  state.audioMode = "intro";
+  state.highlightStart = Number(song.highlightStart) || DEFAULT_HIGHLIGHT_START;
+  state.highlightEnd = state.highlightStart + HIGHLIGHT_SECONDS;
   els.questionNumber.textContent = pad(state.questionIndex + 1);
-  els.questionTotal.textContent = state.total === state.songs.length && els.roundCount.value === "all" ? "ALL" : pad(state.total);
+  els.questionTotal.textContent = totalLabel();
   els.progressBar.style.width = `${(state.questionIndex / state.total) * 100}%`;
   els.releasePill.textContent = displayRelease(song.release);
   els.trackCredit.textContent = song.credit ? `UNIT / ${song.credit}` : "SNOW MAN";
   els.feedback.classList.add("hidden");
   els.feedback.classList.remove("is-wrong");
+  resetAnswerReveal();
+  els.audioCaptionLabel.textContent = "INTRO / AUTO PLAY";
   els.timeBar.style.width = "0%";
-  els.timeLimit.textContent = `00:${String(PREVIEW_SECONDS).padStart(2, "0")}`;
-  setAudioStatus("READY TO PLAY");
+  els.timeLimit.textContent = formatTime(INTRO_SECONDS);
+  setAudioStatus("LOADING INTRO");
   setPlayButton(false);
 
   els.choices.innerHTML = state.choices.map((choice, index) => `
@@ -175,6 +232,8 @@ function renderQuestion() {
   els.audio.src = song.previewUrl || "";
   if (song.previewUrl) {
     els.audio.load();
+    // The start button and the next-question button are user gestures, so autoplay is allowed in normal browsers.
+    window.setTimeout(() => playIntro(), 0);
   } else {
     setAudioStatus("PREVIEW UNAVAILABLE");
   }
@@ -190,6 +249,18 @@ function nextQuestion() {
   state.choices = buildChoices(state.current);
   state.answered = false;
   renderQuestion();
+}
+
+function showAnswerReveal(song) {
+  els.answerReveal.classList.remove("hidden");
+  els.answerRelease.textContent = song.release || "配信中の作品";
+  els.answerSongTitle.textContent = song.title;
+  els.answerSongCredit.textContent = song.credit ? `UNIT / ${song.credit}` : "Snow Man";
+  if (song.artworkUrl) {
+    els.answerArtwork.src = song.artworkUrl;
+    els.answerArtwork.classList.remove("hidden");
+    els.answerArtFallback.classList.add("hidden");
+  }
 }
 
 function answerQuestion(id) {
@@ -221,10 +292,15 @@ function answerQuestion(id) {
   els.feedbackNote.textContent = noteParts.join("  •  ");
   els.appleLink.href = state.current.trackViewUrl || "https://music.apple.com/jp/artist/snow-man/1772019148";
 
+  if (isCorrect) {
+    showAnswerReveal(state.current);
+    playHighlight();
+  }
+
   state.questionIndex += 1;
   els.progressBar.style.width = `${(state.questionIndex / state.total) * 100}%`;
   els.nextButton.textContent = state.questionIndex >= state.total ? "結果を見る  →" : "次の問題  →";
-  els.feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  (isCorrect ? els.answerReveal : els.feedback).scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 function finishGame() {
@@ -248,6 +324,47 @@ function finishGame() {
       : "ここからが本番。もう一度聴いて、耳をSnow Manモードに。";
 }
 
+async function playIntro() {
+  if (!state.current || !state.current.previewUrl || state.answered) return;
+  state.audioMode = "intro";
+  els.audioCaptionLabel.textContent = "INTRO / AUTO PLAY";
+  els.timeLimit.textContent = formatTime(INTRO_SECONDS);
+  els.audio.currentTime = 0;
+  try {
+    await els.audio.play();
+    setAudioStatus("PLAYING INTRO");
+  } catch (error) {
+    setAudioStatus("TAP TO PLAY");
+  }
+}
+
+async function playHighlight() {
+  if (!state.current || !state.current.previewUrl) return;
+  state.audioMode = "highlight";
+  els.audioCaptionLabel.textContent = "CHORUS / HIGHLIGHT";
+  els.revealStatus.textContent = "PLAYING HIGHLIGHT";
+  const startPlayback = async () => {
+    const duration = Number.isFinite(els.audio.duration) ? els.audio.duration : state.highlightStart + HIGHLIGHT_SECONDS;
+    state.highlightEnd = Math.min(duration, state.highlightStart + HIGHLIGHT_SECONDS);
+    if (state.highlightEnd <= state.highlightStart) state.highlightStart = 0;
+    els.audio.currentTime = Math.min(state.highlightStart, Math.max(0, duration - 1));
+    els.timeLimit.textContent = formatTime(Math.max(1, state.highlightEnd - state.highlightStart));
+    try {
+      await els.audio.play();
+      setAudioStatus("PLAYING HIGHLIGHT");
+      els.revealStatus.textContent = "PLAYING HIGHLIGHT";
+    } catch (error) {
+      setAudioStatus("TAP TO PLAY HIGHLIGHT");
+      els.revealStatus.textContent = "TAP TO PLAY HIGHLIGHT";
+    }
+  };
+  if (els.audio.readyState >= 1) {
+    await startPlayback();
+  } else {
+    els.audio.addEventListener("loadedmetadata", startPlayback, { once: true });
+  }
+}
+
 async function toggleAudio() {
   if (!state.current || !state.current.previewUrl) {
     setAudioStatus("PREVIEW UNAVAILABLE");
@@ -257,44 +374,52 @@ async function toggleAudio() {
     els.audio.pause();
     return;
   }
-  if (els.audio.currentTime >= PREVIEW_SECONDS - 0.05 || els.audio.currentTime === 0) {
-    els.audio.currentTime = 0;
-  }
-  try {
-    await els.audio.play();
-    setAudioStatus("PLAYING INTRO");
-  } catch (error) {
-    setAudioStatus("TAP TO PLAY");
+  if (state.audioMode === "highlight") {
+    await playHighlight();
+  } else {
+    await playIntro();
   }
 }
 
 function wireEvents() {
+  els.beginGame.addEventListener("click", startGame);
   els.playButton.addEventListener("click", toggleAudio);
   els.nextButton.addEventListener("click", nextQuestion);
   els.retryButton.addEventListener("click", startGame);
-  els.roundCount.addEventListener("change", startGame);
+  els.roundCount.addEventListener("change", syncCustomControls);
 
+  els.answerArtwork.addEventListener("error", () => {
+    els.answerArtwork.classList.add("hidden");
+    els.answerArtFallback.classList.remove("hidden");
+  });
   els.audio.addEventListener("play", () => setPlayButton(true));
   els.audio.addEventListener("pause", () => {
     setPlayButton(false);
-    if (els.audio.currentTime > 0 && els.audio.currentTime < PREVIEW_SECONDS) setAudioStatus("PAUSED");
+    if (state.answered && state.audioMode === "highlight") els.revealStatus.textContent = "HIGHLIGHT PAUSED";
+    if (els.audio.currentTime > 0) setAudioStatus(state.audioMode === "highlight" ? "HIGHLIGHT PAUSED" : "PAUSED");
   });
   els.audio.addEventListener("ended", () => {
     setPlayButton(false);
-    setAudioStatus("PREVIEW ENDED");
+    setAudioStatus(state.audioMode === "highlight" ? "HIGHLIGHT ENDED" : "PREVIEW ENDED");
+    if (state.audioMode === "highlight") els.revealStatus.textContent = "HIGHLIGHT ENDED";
     els.timeBar.style.width = "100%";
   });
   els.audio.addEventListener("error", () => {
     setPlayButton(false);
     setAudioStatus("PREVIEW UNAVAILABLE");
+    if (state.audioMode === "highlight") els.revealStatus.textContent = "PREVIEW UNAVAILABLE";
   });
   els.audio.addEventListener("timeupdate", () => {
-    const currentTime = Math.min(els.audio.currentTime, PREVIEW_SECONDS);
-    els.timeBar.style.width = `${(currentTime / PREVIEW_SECONDS) * 100}%`;
-    if (currentTime >= PREVIEW_SECONDS - 0.05 && !els.audio.paused) {
+    const start = state.audioMode === "highlight" ? state.highlightStart : 0;
+    const end = state.audioMode === "highlight" ? state.highlightEnd : INTRO_SECONDS;
+    const currentTime = Math.min(els.audio.currentTime, end);
+    const progress = end > start ? Math.max(0, Math.min(100, ((currentTime - start) / (end - start)) * 100)) : 0;
+    els.timeBar.style.width = `${progress}%`;
+    if (currentTime >= end - 0.05 && !els.audio.paused) {
       els.audio.pause();
-      els.audio.currentTime = PREVIEW_SECONDS;
-      setAudioStatus("12 SEC PREVIEW ENDED");
+      els.audio.currentTime = end;
+      setAudioStatus(state.audioMode === "highlight" ? "HIGHLIGHT ENDED" : "12 SEC PREVIEW ENDED");
+      if (state.audioMode === "highlight") els.revealStatus.textContent = "HIGHLIGHT ENDED";
     }
   });
 
@@ -314,6 +439,7 @@ function wireEvents() {
 async function init() {
   renderWaveform();
   wireEvents();
+  syncCustomControls();
   try {
     const response = await fetch("songs.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`songs.json returned ${response.status}`);
@@ -322,7 +448,7 @@ async function init() {
     if (state.songs.length < 4) throw new Error("Not enough songs with previews");
     updateCatalogCount();
     setLoading(false);
-    startGame();
+    els.startGate.classList.remove("hidden");
   } catch (error) {
     els.loading.innerHTML = `<p>曲データを読み込めませんでした。<br />GitHub Pagesまたはローカルサーバー経由で開いてください。</p>`;
     els.headerCount.textContent = "LOAD ERROR";

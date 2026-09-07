@@ -5,8 +5,11 @@ Snow Manの配信曲を使った、4択イントロクイズです。GitHub Page
 ## Features
 
 - 曲名4択のイントロクイズ
-- 10問 / 20問 / 全曲（現在のカタログ全143曲）モード
-- イントロは12秒で自動停止
+- ランディングページとゲームページを分離
+- 問題開始時にイントロを自動再生（12秒で自動停止）
+- 10問 / 20問 / カスタム / 全曲（現在のカタログ全143曲）モード
+- 正解するとジャケット画像、シングル・アルバム名、曲名を表示
+- 正解後はプレビュー内のハイライト区間を「サビプレビュー」として再生
 - 正解・不正解、スコア、連続正解、自己ベストを表示
 - キーボードの `1`〜`4` とスペースキーに対応
 - 音源ファイルはリポジトリへ保存せず、Apple Music / iTunes Search APIの公式プレビューURLを再生
@@ -21,7 +24,7 @@ cd snowman-intro-quiz
 uv run python -m http.server 4173
 ```
 
-その後、<http://localhost:4173> を開きます。
+その後、<http://localhost:4173> を開きます。トップページの「ゲームをはじめる」からゲーム画面へ移動します。
 
 ## GitHub Pagesで公開する手順
 
@@ -45,7 +48,7 @@ git push -u origin main
 
 ## 曲データの更新
 
-`songs.json` は **2026-09-07** 時点のスナップショットです。公式曲目とApple Music / iTunes Search APIのプレビューURLをまとめています。
+`songs.json` は **2026-09-07** 時点のスナップショットです。公式曲目とApple Music / iTunes Search APIのプレビューURL、プレビュー内ハイライトの開始位置をまとめています。
 
 更新したい場合は、ネットワーク接続がある状態で次を実行してください。
 
@@ -61,4 +64,4 @@ uv run python scripts/build_catalog.py
 - 未解禁曲72曲の公式発表: [MENT RECORDING News](https://mentrecording.jp/snowman/news/detail.php?id=1133666)
 - 試聴プレビュー: [iTunes Search API](https://performance-partners.apple.com/search-api) / [Snow Man on Apple Music](https://music.apple.com/jp/artist/snow-man/1772019148)
 
-このプロジェクトはファン向けの非公式作品です。音源そのものはホスティングせず、各サービスが提供するプレビューをブラウザから参照しています。配信状況、プレビューURL、曲名は提供元の変更により変わる可能性があります。
+このプロジェクトはファン向けの非公式作品です。音源そのものはホスティングせず、各サービスが提供するプレビューをブラウザから参照しています。ここでの「サビプレビュー」は、各プレビュー内のハイライト区間を再生する実装です。配信状況、プレビューURL、曲名、ハイライト位置は提供元の変更により変わる可能性があります。

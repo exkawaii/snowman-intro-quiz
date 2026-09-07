@@ -6,6 +6,7 @@
   "songs": [
     {
       "id": "song-001",
+      "highlightStart": 8,
       "title": "Snow World",
       "credit": "",
       "release": "D.D. (Selected Edition) - Single",
@@ -16,6 +17,7 @@
     },
     {
       "id": "song-002",
+      "highlightStart": 8,
       "title": "Big Bang Sweet",
       "credit": "",
       "release": "Grandeur - EP",
@@ -26,6 +28,7 @@
     },
     {
       "id": "song-003",
+      "highlightStart": 8,
       "title": "YumYumYum ～SpicyGirl～",
       "credit": "",
       "release": "HELLO HELLO - EP",
@@ -36,6 +39,7 @@
     },
     {
       "id": "song-004",
+      "highlightStart": 8,
       "title": "Christmas wishes",
       "credit": "",
       "release": "5th Single",
@@ -46,6 +50,7 @@
     },
     {
       "id": "song-005",
+      "highlightStart": 8,
       "title": "My Sweet Girl",
       "credit": "",
       "release": "Secret Touch - EP",
@@ -56,6 +61,7 @@
     },
     {
       "id": "song-006",
+      "highlightStart": 8,
       "title": "REFRESH",
       "credit": "",
       "release": "ブラザービート - EP",
@@ -66,6 +72,7 @@
     },
     {
       "id": "song-007",
+      "highlightStart": 8,
       "title": "From Today",
       "credit": "",
       "release": "ブラザービート - EP",
@@ -76,6 +83,7 @@
     },
     {
       "id": "song-008",
+      "highlightStart": 8,
       "title": "Wonderful! × Surprise!",
       "credit": "",
       "release": "オレンジkiss - EP",
@@ -86,6 +94,7 @@
     },
     {
       "id": "song-009",
+      "highlightStart": 8,
       "title": "Feel the light, Lovely",
       "credit": "",
       "release": "オレンジkiss - EP",
@@ -96,6 +105,7 @@
     },
     {
       "id": "song-010",
+      "highlightStart": 8,
       "title": "Luv Classic",
       "credit": "",
       "release": "タペストリー / W - EP",
@@ -106,6 +116,7 @@
     },
     {
       "id": "song-011",
+      "highlightStart": 8,
       "title": "NO SURRENDER !",
       "credit": "",
       "release": "タペストリー / W - EP",
@@ -116,6 +127,7 @@
     },
     {
       "id": "song-012",
+      "highlightStart": 8,
       "title": "ANY & EVERY",
       "credit": "",
       "release": "Dangerholic - EP",
@@ -126,6 +138,7 @@
     },
     {
       "id": "song-013",
+      "highlightStart": 8,
       "title": "ベストフレンド",
       "credit": "",
       "release": "Dangerholic - EP",
@@ -136,6 +149,7 @@
     },
     {
       "id": "song-014",
+      "highlightStart": 8,
       "title": "NEXT",
       "credit": "",
       "release": "LOVE TRIGGER / We'll go together - EP",
@@ -146,6 +160,7 @@
     },
     {
       "id": "song-015",
+      "highlightStart": 8,
       "title": "ココロヒトツ",
       "credit": "",
       "release": "LOVE TRIGGER / We'll go together - EP",
@@ -156,6 +171,7 @@
     },
     {
       "id": "song-016",
+      "highlightStart": 8,
       "title": "ドレス&タキシード",
       "credit": "",
       "release": "BREAKOUT / 君は僕のもの - EP",
@@ -166,6 +182,7 @@
     },
     {
       "id": "song-017",
+      "highlightStart": 8,
       "title": "What's your color?",
       "credit": "",
       "release": "BREAKOUT / 君は僕のもの - EP",
@@ -176,6 +193,7 @@
     },
     {
       "id": "song-018",
+      "highlightStart": 8,
       "title": "ばきゅん",
       "credit": "",
       "release": "SERIOUS - EP",
@@ -186,6 +204,7 @@
     },
     {
       "id": "song-019",
+      "highlightStart": 8,
       "title": "Infighter",
       "credit": "",
       "release": "Snow Mania S1",
@@ -196,6 +215,7 @@
     },
     {
       "id": "song-020",
+      "highlightStart": 8,
       "title": "TIKI TIKI",
       "credit": "",
       "release": "Snow Mania S1",
@@ -206,6 +226,7 @@
     },
     {
       "id": "song-021",
+      "highlightStart": 8,
       "title": "Delicious!!!",
       "credit": "",
       "release": "Snow Mania S1",
@@ -216,6 +237,7 @@
     },
     {
       "id": "song-022",
+      "highlightStart": 8,
       "title": "HELLO HELLO -Movie Ver.-",
       "credit": "",
       "release": "Snow Mania S1",
@@ -226,6 +248,7 @@
     },
     {
       "id": "song-023",
+      "highlightStart": 8,
       "title": "Be Proud!",
       "credit": "",
       "release": "Snow Mania S1",
@@ -236,6 +259,7 @@
     },
     {
       "id": "song-024",
+      "highlightStart": 8,
       "title": "GRATITUDE",
       "credit": "",
       "release": "Snow Mania S1",
@@ -246,6 +270,7 @@
     },
     {
       "id": "song-025",
+      "highlightStart": 8,
       "title": "Acrobatic",
       "credit": "",
       "release": "Snow Mania S1",
@@ -256,6 +281,7 @@
     },
     {
       "id": "song-026",
+      "highlightStart": 8,
       "title": "Boogie Woogie Baby",
       "credit": "",
       "release": "Snow Mania S1",
@@ -266,6 +292,7 @@
     },
     {
       "id": "song-027",
+      "highlightStart": 8,
       "title": "Vanishing Over",
       "credit": "",
       "release": "Snow Mania S1",
@@ -276,6 +303,7 @@
     },
     {
       "id": "song-028",
+      "highlightStart": 8,
       "title": "IX Guys Snow Man",
       "credit": "",
       "release": "Snow Mania S1",
@@ -286,6 +314,7 @@
     },
     {
       "id": "song-029",
+      "highlightStart": 8,
       "title": "Don't Hold Back",
       "credit": "",
       "release": "Snow Mania S1",
@@ -296,6 +325,7 @@
     },
     {
       "id": "song-030",
+      "highlightStart": 8,
       "title": "Make It Hot",
       "credit": "",
       "release": "Snow Mania S1",
@@ -306,6 +336,7 @@
     },
     {
       "id": "song-031",
+      "highlightStart": 8,
       "title": "Lock on!",
       "credit": "",
       "release": "Snow Mania S1",
@@ -316,6 +347,7 @@
     },
     {
       "id": "song-032",
+      "highlightStart": 8,
       "title": "P.M.G.",
       "credit": "深澤辰哉 / 向井康二 / 宮舘涼太",
       "release": "Snow Mania S1",
@@ -326,6 +358,7 @@
     },
     {
       "id": "song-033",
+      "highlightStart": 8,
       "title": "ADDICTED TO LOVE",
       "credit": "岩本照 / ラウール / 佐久間大介",
       "release": "Snow Mania S1",
@@ -336,6 +369,7 @@
     },
     {
       "id": "song-034",
+      "highlightStart": 8,
       "title": "360m",
       "credit": "渡辺翔太 / 阿部亮平 / 目黒蓮",
       "release": "Snow Mania S1",
@@ -346,6 +380,7 @@
     },
     {
       "id": "song-035",
+      "highlightStart": 8,
       "title": "Toxic Girl",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -356,6 +391,7 @@
     },
     {
       "id": "song-036",
+      "highlightStart": 8,
       "title": "Brand New Smile",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -366,6 +402,7 @@
     },
     {
       "id": "song-037",
+      "highlightStart": 8,
       "title": "BOOM BOOM LIGHT",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -376,6 +413,7 @@
     },
     {
       "id": "song-038",
+      "highlightStart": 8,
       "title": "キッタキッテナイ",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -386,6 +424,7 @@
     },
     {
       "id": "song-039",
+      "highlightStart": 8,
       "title": "Movin' up",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -396,6 +435,7 @@
     },
     {
       "id": "song-040",
+      "highlightStart": 8,
       "title": "This is LOVE",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -406,6 +446,7 @@
     },
     {
       "id": "song-041",
+      "highlightStart": 8,
       "title": "HYPNOSIS",
       "credit": "岩本照 / 向井康二 / 目黒蓮",
       "release": "Snow Labo. S2",
@@ -416,6 +457,7 @@
     },
     {
       "id": "song-042",
+      "highlightStart": 8,
       "title": "ガラライキュ！",
       "credit": "深澤辰哉 / ラウール / 渡辺翔太",
       "release": "Snow Labo. S2",
@@ -426,6 +468,7 @@
     },
     {
       "id": "song-043",
+      "highlightStart": 8,
       "title": "Color me live...",
       "credit": "阿部亮平 / 宮舘涼太 / 佐久間大介",
       "release": "Snow Labo. S2",
@@ -436,6 +479,7 @@
     },
     {
       "id": "song-044",
+      "highlightStart": 8,
       "title": "Super Deeper",
       "credit": "",
       "release": "i DO ME",
@@ -446,6 +490,7 @@
     },
     {
       "id": "song-045",
+      "highlightStart": 8,
       "title": "8月の青",
       "credit": "",
       "release": "i DO ME",
@@ -456,6 +501,7 @@
     },
     {
       "id": "song-046",
+      "highlightStart": 8,
       "title": "Two",
       "credit": "渡辺翔太 / 目黒蓮",
       "release": "i DO ME",
@@ -466,6 +512,7 @@
     },
     {
       "id": "song-047",
+      "highlightStart": 8,
       "title": "Bass Bon",
       "credit": "ラウール / 佐久間大介",
       "release": "i DO ME",
@@ -476,6 +523,7 @@
     },
     {
       "id": "song-048",
+      "highlightStart": 8,
       "title": "Vroom Vroom Vroom",
       "credit": "岩本照 / 深澤辰哉 / 宮舘涼太",
       "release": "i DO ME",
@@ -486,6 +534,7 @@
     },
     {
       "id": "song-049",
+      "highlightStart": 8,
       "title": "Gotcha!",
       "credit": "向井康二 / 阿部亮平",
       "release": "i DO ME",
@@ -496,6 +545,7 @@
     },
     {
       "id": "song-050",
+      "highlightStart": 8,
       "title": "リンディーララ",
       "credit": "",
       "release": "RAYS",
@@ -506,6 +556,7 @@
     },
     {
       "id": "song-051",
+      "highlightStart": 8,
       "title": "endless night",
       "credit": "",
       "release": "RAYS",
@@ -516,6 +567,7 @@
     },
     {
       "id": "song-052",
+      "highlightStart": 8,
       "title": "君へ贈る応援歌",
       "credit": "",
       "release": "RAYS",
@@ -526,6 +578,7 @@
     },
     {
       "id": "song-053",
+      "highlightStart": 8,
       "title": "これが愛じゃないのなら",
       "credit": "",
       "release": "RAYS",
@@ -536,6 +589,7 @@
     },
     {
       "id": "song-054",
+      "highlightStart": 8,
       "title": "ROCK 'N' ROLL",
       "credit": "",
       "release": "RAYS",
@@ -546,6 +600,7 @@
     },
     {
       "id": "song-055",
+      "highlightStart": 8,
       "title": "Wha cha cha",
       "credit": "",
       "release": "RAYS",
@@ -556,6 +611,7 @@
     },
     {
       "id": "song-056",
+      "highlightStart": 8,
       "title": "KATANA",
       "credit": "",
       "release": "RAYS",
@@ -566,6 +622,7 @@
     },
     {
       "id": "song-057",
+      "highlightStart": 8,
       "title": "GLITCH",
       "credit": "岩本照 / ラウール",
       "release": "RAYS",
@@ -576,6 +633,7 @@
     },
     {
       "id": "song-058",
+      "highlightStart": 8,
       "title": "Hot Flow",
       "credit": "目黒蓮 / 佐久間大介",
       "release": "RAYS",
@@ -586,6 +644,7 @@
     },
     {
       "id": "song-059",
+      "highlightStart": 8,
       "title": "ナイトスケープ",
       "credit": "深澤辰哉 / 阿部亮平 / 宮舘涼太",
       "release": "RAYS",
@@ -596,6 +655,7 @@
     },
     {
       "id": "song-060",
+      "highlightStart": 8,
       "title": "星のうた",
       "credit": "渡辺翔太 / 向井康二",
       "release": "RAYS",
@@ -606,6 +666,7 @@
     },
     {
       "id": "song-061",
+      "highlightStart": 8,
       "title": "Spark!!",
       "credit": "",
       "release": "音故知新",
@@ -616,6 +677,7 @@
     },
     {
       "id": "song-062",
+      "highlightStart": 8,
       "title": "くちびる",
       "credit": "",
       "release": "音故知新",
@@ -626,6 +688,7 @@
     },
     {
       "id": "song-063",
+      "highlightStart": 8,
       "title": "嫉妬ガール",
       "credit": "",
       "release": "音故知新",
@@ -636,6 +699,7 @@
     },
     {
       "id": "song-064",
+      "highlightStart": 8,
       "title": "Miss Brand-New Friday Night",
       "credit": "",
       "release": "音故知新",
@@ -646,6 +710,7 @@
     },
     {
       "id": "song-065",
+      "highlightStart": 8,
       "title": "約束は君と",
       "credit": "",
       "release": "音故知新",
@@ -656,6 +721,7 @@
     },
     {
       "id": "song-066",
+      "highlightStart": 8,
       "title": "Days",
       "credit": "",
       "release": "音故知新",
@@ -666,6 +732,7 @@
     },
     {
       "id": "song-067",
+      "highlightStart": 8,
       "title": "愛のせいで",
       "credit": "",
       "release": "音故知新",
@@ -676,6 +743,7 @@
     },
     {
       "id": "song-068",
+      "highlightStart": 8,
       "title": "Symmetry",
       "credit": "岩本照 / 深澤辰哉",
       "release": "音故知新",
@@ -686,6 +754,7 @@
     },
     {
       "id": "song-069",
+      "highlightStart": 8,
       "title": "ART",
       "credit": "阿部亮平 / 目黒蓮",
       "release": "音故知新",
@@ -696,6 +765,7 @@
     },
     {
       "id": "song-070",
+      "highlightStart": 8,
       "title": "地球(あい)してるぜ",
       "credit": "宮舘涼太 / 佐久間大介",
       "release": "音故知新",
@@ -706,6 +776,7 @@
     },
     {
       "id": "song-071",
+      "highlightStart": 8,
       "title": "サンシャインドリーマー",
       "credit": "ラウール / 渡辺翔太 / 向井康二",
       "release": "音故知新",
@@ -716,6 +787,7 @@
     },
     {
       "id": "song-072",
+      "highlightStart": 8,
       "title": "Nine Snow Charge!!",
       "credit": "",
       "release": "音故知新",
@@ -726,6 +798,7 @@
     },
     {
       "id": "song-073",
+      "highlightStart": 8,
       "title": "D.D.",
       "credit": "",
       "release": "Snow Mania S1",
@@ -736,6 +809,7 @@
     },
     {
       "id": "song-074",
+      "highlightStart": 8,
       "title": "EVOLUTION",
       "credit": "",
       "release": "Snow Mania S1",
@@ -746,6 +820,7 @@
     },
     {
       "id": "song-075",
+      "highlightStart": 8,
       "title": "Secret Touch",
       "credit": "",
       "release": "Snow Labo. S2",
@@ -756,6 +831,7 @@
     },
     {
       "id": "song-076",
+      "highlightStart": 8,
       "title": "あいことば",
       "credit": "",
       "release": "i DO ME",
@@ -766,6 +842,7 @@
     },
     {
       "id": "song-077",
+      "highlightStart": 8,
       "title": "EMPIRE",
       "credit": "",
       "release": "RAYS",
@@ -776,6 +853,7 @@
     },
     {
       "id": "song-078",
+      "highlightStart": 8,
       "title": "TRUE LOVE",
       "credit": "",
       "release": "音故知新",
@@ -786,6 +864,7 @@
     },
     {
       "id": "song-079",
+      "highlightStart": 8,
       "title": "BOOST",
       "credit": "",
       "release": "音故知新",
@@ -796,6 +875,7 @@
     },
     {
       "id": "song-080",
+      "highlightStart": 8,
       "title": "悪戯な天使",
       "credit": "",
       "release": "音故知新",
@@ -806,6 +886,7 @@
     },
     {
       "id": "song-081",
+      "highlightStart": 8,
       "title": "カリスマックス",
       "credit": "",
       "release": "音故知新",
@@ -816,6 +897,7 @@
     },
     {
       "id": "song-082",
+      "highlightStart": 8,
       "title": "SERIOUS",
       "credit": "",
       "release": "音故知新",
@@ -826,6 +908,7 @@
     },
     {
       "id": "song-083",
+      "highlightStart": 8,
       "title": "夏色花火",
       "credit": "",
       "release": "SERIOUS - EP",
@@ -836,6 +919,7 @@
     },
     {
       "id": "song-084",
+      "highlightStart": 8,
       "title": "Jack In The Box",
       "credit": "",
       "release": "SERIOUS - EP",
@@ -846,6 +930,7 @@
     },
     {
       "id": "song-085",
+      "highlightStart": 8,
       "title": "STARS",
       "credit": "",
       "release": "STARS - Single",
@@ -856,6 +941,7 @@
     },
     {
       "id": "song-086",
+      "highlightStart": 8,
       "title": "BANG!!",
       "credit": "",
       "release": "BANG!! - Single",
@@ -866,6 +952,7 @@
     },
     {
       "id": "song-087",
+      "highlightStart": 8,
       "title": "SAVE YOUR HEART",
       "credit": "",
       "release": "SAVE YOUR HEART - Single",
@@ -876,6 +963,7 @@
     },
     {
       "id": "song-088",
+      "highlightStart": 8,
       "title": "オドロウゼ！",
       "credit": "",
       "release": "オドロウゼ! - Single",
@@ -886,6 +974,7 @@
     },
     {
       "id": "song-089",
+      "highlightStart": 8,
       "title": "グッタイム",
       "credit": "",
       "release": "グッタイム - Single",
@@ -896,6 +985,7 @@
     },
     {
       "id": "song-090",
+      "highlightStart": 8,
       "title": "ALL SUITE",
       "credit": "",
       "release": "AMENITY",
@@ -906,6 +996,7 @@
     },
     {
       "id": "song-091",
+      "highlightStart": 8,
       "title": "奇跡",
       "credit": "",
       "release": "AMENITY",
@@ -916,6 +1007,7 @@
     },
     {
       "id": "song-092",
+      "highlightStart": 8,
       "title": "GO HARD",
       "credit": "",
       "release": "AMENITY",
@@ -926,6 +1018,7 @@
     },
     {
       "id": "song-093",
+      "highlightStart": 8,
       "title": "マドラー",
       "credit": "",
       "release": "AMENITY",
@@ -936,6 +1029,7 @@
     },
     {
       "id": "song-094",
+      "highlightStart": 8,
       "title": "show time...",
       "credit": "",
       "release": "AMENITY",
@@ -946,6 +1040,7 @@
     },
     {
       "id": "song-095",
+      "highlightStart": 8,
       "title": "A PIECE OF CAKE",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -956,6 +1051,7 @@
     },
     {
       "id": "song-096",
+      "highlightStart": 8,
       "title": "BREAKOUT",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -966,6 +1062,7 @@
     },
     {
       "id": "song-097",
+      "highlightStart": 8,
       "title": "CHARISMAX (English ver.)",
       "credit": "",
       "release": "CHARISMAX (English ver.) - Single",
@@ -976,6 +1073,7 @@
     },
     {
       "id": "song-098",
+      "highlightStart": 8,
       "title": "Crazy F-R-E-S-H Beat",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -986,6 +1084,7 @@
     },
     {
       "id": "song-099",
+      "highlightStart": 8,
       "title": "Cry out",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -996,6 +1095,7 @@
     },
     {
       "id": "song-100",
+      "highlightStart": 8,
       "title": "DA BOMB",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1006,6 +1106,7 @@
     },
     {
       "id": "song-101",
+      "highlightStart": 8,
       "title": "Dangerholic",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1016,6 +1117,7 @@
     },
     {
       "id": "song-102",
+      "highlightStart": 8,
       "title": "Dear,",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1026,6 +1128,7 @@
     },
     {
       "id": "song-103",
+      "highlightStart": 8,
       "title": "EVERYTHING IS EVERYTHING",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1036,6 +1139,7 @@
     },
     {
       "id": "song-104",
+      "highlightStart": 8,
       "title": "Grandeur",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1046,6 +1150,7 @@
     },
     {
       "id": "song-105",
+      "highlightStart": 8,
       "title": "Happy Birthday",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1056,6 +1161,7 @@
     },
     {
       "id": "song-106",
+      "highlightStart": 8,
       "title": "HELLO HELLO",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1066,6 +1172,7 @@
     },
     {
       "id": "song-107",
+      "highlightStart": 8,
       "title": "Hip bounce!!",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1076,6 +1183,7 @@
     },
     {
       "id": "song-108",
+      "highlightStart": 8,
       "title": "JUICY",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1086,6 +1194,7 @@
     },
     {
       "id": "song-109",
+      "highlightStart": 8,
       "title": "Julietta",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1096,6 +1205,7 @@
     },
     {
       "id": "song-110",
+      "highlightStart": 8,
       "title": "KANPAI Year!!",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1106,6 +1216,7 @@
     },
     {
       "id": "song-111",
+      "highlightStart": 8,
       "title": "KISSIN' MY LIPS",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1116,6 +1227,7 @@
     },
     {
       "id": "song-112",
+      "highlightStart": 8,
       "title": "LOVE TRIGGER",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1126,6 +1238,7 @@
     },
     {
       "id": "song-113",
+      "highlightStart": 8,
       "title": "Nine Snow Flash",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1136,6 +1249,7 @@
     },
     {
       "id": "song-114",
+      "highlightStart": 8,
       "title": "One",
       "credit": "",
       "release": "One - Single",
@@ -1146,6 +1260,7 @@
     },
     {
       "id": "song-115",
+      "highlightStart": 8,
       "title": "Party! Party! Party!",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1156,6 +1271,7 @@
     },
     {
       "id": "song-116",
+      "highlightStart": 8,
       "title": "POWEEEEER",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1166,6 +1282,7 @@
     },
     {
       "id": "song-117",
+      "highlightStart": 8,
       "title": "Ready Go Round",
       "credit": "",
       "release": "Ready Go Round - Single",
@@ -1176,6 +1293,7 @@
     },
     {
       "id": "song-118",
+      "highlightStart": 8,
       "title": "SBY",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1186,6 +1304,7 @@
     },
     {
       "id": "song-119",
+      "highlightStart": 8,
       "title": "slow...",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1196,6 +1315,7 @@
     },
     {
       "id": "song-120",
+      "highlightStart": 8,
       "title": "Snow Man's Life",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1206,6 +1326,7 @@
     },
     {
       "id": "song-121",
+      "highlightStart": 8,
       "title": "Stories",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1216,6 +1337,7 @@
     },
     {
       "id": "song-122",
+      "highlightStart": 8,
       "title": "Sugar",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1226,6 +1348,7 @@
     },
     {
       "id": "song-123",
+      "highlightStart": 8,
       "title": "Super Sexy",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1236,6 +1359,7 @@
     },
     {
       "id": "song-124",
+      "highlightStart": 8,
       "title": "Tic Tac Toe",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1246,6 +1370,7 @@
     },
     {
       "id": "song-125",
+      "highlightStart": 8,
       "title": "W",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1256,6 +1381,7 @@
     },
     {
       "id": "song-126",
+      "highlightStart": 8,
       "title": "We'll go together",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1266,6 +1392,7 @@
     },
     {
       "id": "song-127",
+      "highlightStart": 8,
       "title": "イチバンボシ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1276,6 +1403,7 @@
     },
     {
       "id": "song-128",
+      "highlightStart": 8,
       "title": "オレンジkiss",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1286,6 +1414,7 @@
     },
     {
       "id": "song-129",
+      "highlightStart": 8,
       "title": "クラクラ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1296,6 +1425,7 @@
     },
     {
       "id": "song-130",
+      "highlightStart": 8,
       "title": "スタートライン",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1306,6 +1436,7 @@
     },
     {
       "id": "song-131",
+      "highlightStart": 8,
       "title": "タペストリー",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1316,6 +1447,7 @@
     },
     {
       "id": "song-132",
+      "highlightStart": 8,
       "title": "ナミダの海を越えて行け",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1326,6 +1458,7 @@
     },
     {
       "id": "song-133",
+      "highlightStart": 8,
       "title": "ファンターナモーレ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1336,6 +1469,7 @@
     },
     {
       "id": "song-134",
+      "highlightStart": 8,
       "title": "ブラザービート",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1346,6 +1480,7 @@
     },
     {
       "id": "song-135",
+      "highlightStart": 8,
       "title": "ボクとキミと",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1356,6 +1491,7 @@
     },
     {
       "id": "song-136",
+      "highlightStart": 8,
       "title": "ミッドナイト・トレンディ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1366,6 +1502,7 @@
     },
     {
       "id": "song-137",
+      "highlightStart": 8,
       "title": "僕という名のドラマ",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1376,6 +1513,7 @@
     },
     {
       "id": "song-138",
+      "highlightStart": 8,
       "title": "僕に大切にされてね。",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1386,6 +1524,7 @@
     },
     {
       "id": "song-139",
+      "highlightStart": 8,
       "title": "僕の彼女になってよ。",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1396,6 +1535,7 @@
     },
     {
       "id": "song-140",
+      "highlightStart": 8,
       "title": "君の彼氏になりたい。",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1406,6 +1546,7 @@
     },
     {
       "id": "song-141",
+      "highlightStart": 8,
       "title": "君は僕のもの",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1416,6 +1557,7 @@
     },
     {
       "id": "song-142",
+      "highlightStart": 8,
       "title": "終わらない Memories",
       "credit": "",
       "release": "THE BEST 2020 - 2025",
@@ -1426,6 +1568,7 @@
     },
     {
       "id": "song-143",
+      "highlightStart": 8,
       "title": "縁 -YUÁN-",
       "credit": "",
       "release": "THE BEST 2020 - 2025",

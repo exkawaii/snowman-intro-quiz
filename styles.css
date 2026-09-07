@@ -235,3 +235,55 @@ kbd { display: inline-grid; place-items: center; width: 18px; height: 18px; marg
   .footer-links { justify-content: start; margin: 20px 0; flex-wrap: wrap; }
   .footer-credit { text-align: left; }
 }
+
+/* Landing page and game-start additions */
+.feature-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.feature-item { min-height: 142px; padding: 23px 27px; border-right: 1px solid var(--line); display: grid; grid-template-columns: 30px 1fr; column-gap: 16px; align-content: center; }
+.feature-item:last-child { border-right: 0; }
+.feature-item > span { color: var(--accent); font: 500 11px var(--mono); }
+.feature-item strong { font: 700 13px var(--mono); letter-spacing: .07em; }
+.feature-item p { grid-column: 2; margin: 7px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.game-page-section { padding-top: 70px; }
+.game-page-section .game-heading { align-items: center; }
+.game-page-section h1 { margin: 18px 0 0; font-size: clamp(58px, 7.2vw, 105px); }
+.back-link { display: inline-block; color: var(--muted); font: 500 10px var(--mono); letter-spacing: .08em; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.game-settings { display: flex; align-items: end; gap: 12px; }
+.custom-round { display: flex; flex-direction: column; gap: 8px; min-width: 92px; }
+.custom-round label { color: var(--muted); font: 500 10px var(--mono); letter-spacing: .09em; }
+.custom-round input { width: 92px; height: 40px; padding: 0 10px; border: 1px solid var(--ink); border-radius: 0; background: transparent; color: var(--ink); font: 500 12px var(--mono); }
+.start-gate { min-height: 470px; display: grid; align-content: center; justify-items: center; text-align: center; }
+.start-gate .eyebrow { margin-bottom: 20px; }
+.start-gate h2 { margin: 0 0 18px; font-size: clamp(68px, 9vw, 125px); }
+.start-note { margin-bottom: 28px; color: var(--muted); font-size: 13px; }
+.begin-button { min-width: 210px; }
+.answer-reveal { margin-top: 25px; padding: 16px; display: grid; grid-template-columns: 112px 1fr; gap: 18px; align-items: center; background: var(--ink); color: var(--white); animation: reveal-in .35s ease both; }
+.answer-art-frame { width: 112px; aspect-ratio: 1; position: relative; display: grid; place-items: center; overflow: hidden; background: var(--blue); }
+.answer-art-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.answer-art-frame > span { color: var(--ink); font-size: 35px; font-weight: 800; letter-spacing: -.1em; }
+.answer-reveal-copy { min-width: 0; display: grid; gap: 5px; }
+.answer-reveal-copy .mono-label { color: var(--green); }
+.answer-release { color: #d6d1c7; font: 500 10px var(--mono); letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.answer-reveal-copy h3 { margin: 0; font-size: clamp(20px, 3vw, 32px); line-height: 1.1; letter-spacing: -.04em; }
+.answer-song-credit { margin: 0; color: #c8c2b8; font-size: 10px; line-height: 1.4; }
+.reveal-status { margin-top: 6px; color: var(--accent-soft); font: 500 9px var(--mono); letter-spacing: .08em; }
+@keyframes reveal-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+  .feature-item { padding-left: 18px; padding-right: 18px; }
+  .game-page-section .game-heading { align-items: end; }
+}
+@media (max-width: 620px) {
+  .feature-strip { grid-template-columns: 1fr; }
+  .feature-item { min-height: 92px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .feature-item:last-child { border-bottom: 0; }
+  .game-page-section { padding-top: 54px; }
+  .game-page-section .game-heading { display: block; }
+  .game-page-section h1 { font-size: 64px; margin-bottom: 30px; }
+  .game-settings { align-items: end; flex-wrap: wrap; }
+  .game-settings .mode-picker { width: 180px; }
+  .answer-reveal { grid-template-columns: 82px 1fr; gap: 13px; padding: 12px; }
+  .answer-art-frame { width: 82px; }
+  .answer-art-frame > span { font-size: 27px; }
+  .answer-reveal-copy h3 { font-size: 21px; }
+  .answer-release { font-size: 9px; }
+}

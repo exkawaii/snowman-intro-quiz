@@ -14,7 +14,7 @@
   <body>
     <div class="site-shell">
       <header class="site-header">
-        <a class="brand" href="#top" aria-label="Snow Man Intro Quiz ホーム">
+        <a class="brand" href="index.html" aria-label="Snow Man Intro Quiz ホーム">
           <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
           <span>SNOW MAN <b>//</b> INTRO QUIZ</span>
         </a>
@@ -22,7 +22,7 @@
           <span class="live-dot"></span>
           <span>STREAMING CATALOG</span>
           <span class="meta-divider"></span>
-          <span id="header-count">LOADING TRACKS</span>
+          <span>143 TRACKS READY</span>
         </div>
       </header>
 
@@ -33,7 +33,7 @@
             <h1>INTRO<br /><em>QUIZ</em></h1>
             <p class="hero-lead">イントロを聴いて、曲名を選ぼう。<br />Snow Manの現在配信中の楽曲を4択で出題。</p>
             <div class="hero-actions">
-              <a class="button button-dark" href="#game" id="hero-start">ゲームをはじめる <span>↘</span></a>
+              <a class="button button-dark" href="game.html">ゲームをはじめる <span>↘</span></a>
               <a class="text-link" href="#about">遊び方を見る <span>↘</span></a>
             </div>
           </div>
@@ -47,121 +47,32 @@
           </div>
           <aside class="catalog-card">
             <div class="card-kicker">CATALOG / 2026.09.07</div>
-            <div class="catalog-number" id="catalog-count">—</div>
+            <div class="catalog-number">143</div>
             <p>songs ready<br />to be heard</p>
             <div class="card-line"></div>
-            <div class="card-foot"><span>4 OPTIONS</span><span>12 SEC PREVIEW</span></div>
+            <div class="card-foot"><span>4 OPTIONS</span><span>ALL SONGS</span></div>
           </aside>
         </section>
 
-        <section class="game-section" id="game" aria-labelledby="game-title">
-          <div class="game-heading">
-            <div>
-              <p class="eyebrow"><span>02</span> PLAY MODE</p>
-              <h2 id="game-title">LISTEN.<br /><em>GUESS.</em></h2>
-            </div>
-            <div class="mode-picker">
-              <label for="round-count">ROUND</label>
-              <select id="round-count" aria-label="出題数">
-                <option value="10">10 QUESTIONS</option>
-                <option value="20">20 QUESTIONS</option>
-                <option value="all">ALL SONGS</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="game-board" id="game-board" aria-live="polite">
-            <div class="loading-state" id="loading-state">
-              <span class="loader"></span>
-              <p>曲データを読み込んでいます…</p>
-            </div>
-
-            <div class="game-topbar hidden" id="game-topbar">
-              <div class="progress-wrap">
-                <span class="mono-label">QUESTION</span>
-                <strong><span id="question-number">01</span><small> / <span id="question-total">10</span></small></strong>
-                <div class="progress-track"><span id="progress-bar"></span></div>
-              </div>
-              <div class="score-wrap">
-                <span class="mono-label">SCORE</span>
-                <strong id="score">00</strong>
-              </div>
-              <div class="streak-wrap">
-                <span class="mono-label">STREAK</span>
-                <strong id="streak">00</strong>
-              </div>
-            </div>
-
-            <div class="question-area hidden" id="question-area">
-              <div class="question-meta">
-                <span class="pill" id="release-pill">STREAMING</span>
-                <span class="track-credit" id="track-credit"></span>
-              </div>
-              <div class="audio-stage" id="audio-stage">
-                <div class="waveform" id="waveform" aria-hidden="true"></div>
-                <div class="audio-caption">
-                  <span class="mono-label">INTRO PREVIEW</span>
-                  <span id="audio-status">READY TO PLAY</span>
-                </div>
-                <button class="play-button" id="play-button" type="button" aria-label="イントロを再生">
-                  <span class="play-icon" aria-hidden="true"></span>
-                  <span class="play-text">PLAY INTRO</span>
-                </button>
-                <div class="time-row">
-                  <span>00:00</span>
-                  <div class="time-track"><span id="time-bar"></span></div>
-                  <span id="time-limit">00:12</span>
-                </div>
-              </div>
-
-              <div class="answer-heading">
-                <span class="mono-label">WHAT'S THE TITLE?</span>
-                <span class="answer-hint">答えをひとつ選んでください</span>
-              </div>
-              <div class="choices" id="choices"></div>
-              <p class="keyboard-hint"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> キーでも回答できます</p>
-
-              <div class="feedback hidden" id="feedback">
-                <div class="feedback-icon" id="feedback-icon"></div>
-                <div class="feedback-copy">
-                  <span class="mono-label" id="feedback-label">CORRECT</span>
-                  <strong id="feedback-title"></strong>
-                  <p id="feedback-note"></p>
-                </div>
-                <a class="feedback-link" id="apple-link" href="#" target="_blank" rel="noreferrer">Apple Musicで確認 <span>↗</span></a>
-                <button class="button button-dark next-button" id="next-button" type="button">次の問題 <span>→</span></button>
-              </div>
-            </div>
-
-            <div class="result-area hidden" id="result-area">
-              <p class="eyebrow"><span>RESULT</span> QUIZ COMPLETE</p>
-              <h3><span id="result-score">00</span><small> / <span id="result-total">10</span></small></h3>
-              <p class="result-message" id="result-message"></p>
-              <div class="result-stats">
-                <div><span class="mono-label">ACCURACY</span><strong id="result-accuracy">0%</strong></div>
-                <div><span class="mono-label">BEST SCORE</span><strong id="best-score">00</strong></div>
-              </div>
-              <div class="result-actions">
-                <button class="button button-dark" id="retry-button" type="button">もう一度遊ぶ <span>↗</span></button>
-                <a class="text-link" href="#about">曲データについて <span>↓</span></a>
-              </div>
-            </div>
-          </div>
+        <section class="feature-strip" aria-label="ゲームの特徴">
+          <div class="feature-item"><span>01</span><strong>AUTO PLAY</strong><p>問題が始まるとイントロが自動再生。</p></div>
+          <div class="feature-item"><span>02</span><strong>CUSTOM ROUND</strong><p>1問から全曲まで好きな問題数で。</p></div>
+          <div class="feature-item"><span>03</span><strong>CHORUS REVEAL</strong><p>正解後はジャケ写と曲のハイライト。</p></div>
         </section>
 
         <section class="about-section section-grid" id="about">
           <div class="about-title">
-            <p class="eyebrow"><span>03</span> HOW TO PLAY</p>
+            <p class="eyebrow"><span>02</span> HOW TO PLAY</p>
             <h2>簡単3ステップ。<br /><em>LET'S GO.</em></h2>
           </div>
           <div class="steps">
-            <div class="step"><span>01</span><div><h3>PLAY</h3><p>再生ボタンを押して、イントロを聴く。プレビューは12秒で自動停止します。</p></div></div>
-            <div class="step"><span>02</span><div><h3>CHOOSE</h3><p>4つの選択肢から曲名を選ぶ。キーボードの1〜4でも回答できます。</p></div></div>
-            <div class="step"><span>03</span><div><h3>REPEAT</h3><p>正解を確認して、次の問題へ。全曲モードではカタログの全曲が登場します。</p></div></div>
+            <div class="step"><span>01</span><div><h3>SET</h3><p>問題数を選ぶ。10問、20問、カスタム、またはALL SONGSから選択できます。</p></div></div>
+            <div class="step"><span>02</span><div><h3>LISTEN</h3><p>ゲームページを開いて開始ボタンを押すと、各問題のイントロが自動で流れます。</p></div></div>
+            <div class="step"><span>03</span><div><h3>REVEAL</h3><p>正解するとジャケ写、シングル・アルバム名、曲名とハイライトプレビューを表示します。</p></div></div>
           </div>
           <div class="legal-note">
             <span class="note-mark">i</span>
-            <p>音源はリポジトリに収録せず、Apple Music / iTunes Search APIが提供する公式プレビューを再生しています。プレビューの提供状況や曲目は変更される場合があります。</p>
+            <p>音源はリポジトリに収録せず、Apple Music / iTunes Search APIが提供する公式プレビューを再生しています。サビ表示では、各プレビュー内のハイライト区間を再生します。</p>
           </div>
         </section>
       </main>
@@ -172,7 +83,5 @@
         <div class="footer-credit">MADE FOR THE PLAYLIST<br /><span>© 2026 exkawaii</span></div>
       </footer>
     </div>
-    <audio id="audio" preload="auto"></audio>
-    <script src="app.js" defer></script>
   </body>
 </html>
