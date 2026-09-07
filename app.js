@@ -19,6 +19,9 @@ const els = {
   streak: $("#streak"),
   waveform: $("#waveform"),
   audioStage: $("#audio-stage"),
+  answerInline: $("#answer-inline"),
+  answerRevealMount: $("#answer-reveal-mount"),
+  feedbackMount: $("#feedback-mount"),
   audioCaptionLabel: $("#audio-caption-label"),
   audioStatus: $("#audio-status"),
   playButton: $("#play-button"),
@@ -44,6 +47,8 @@ const els = {
   resultAccuracy: $("#result-accuracy"),
   resultMessage: $("#result-message"),
   bestScore: $("#best-score"),
+  shareResult: $("#share-result"),
+  shareStatus: $("#share-status"),
   retryButton: $("#retry-button"),
 };
 
@@ -186,6 +191,11 @@ function buildChoices(answer) {
 }
 
 function resetAnswerReveal() {
+  if (els.answerReveal.parentElement !== els.answerRevealMount) els.answerRevealMount.appendChild(els.answerReveal);
+  if (els.feedback.parentElement !== els.feedbackMount) els.feedbackMount.appendChild(els.feedback);
+  els.answerInline.classList.add("hidden");
+  els.audioStage.classList.remove("has-answer");
+  els.questionArea.classList.remove("answered");
   els.answerReveal.classList.add("hidden");
   els.answerArtwork.removeAttribute("src");
   els.answerArtwork.classList.add("hidden");
@@ -293,6 +303,11 @@ function answerQuestion(id) {
     playHighlight();
   }
 
+  els.answerInline.append(els.answerReveal, els.feedback);
+  els.answerInline.classList.remove("hidden");
+  els.audioStage.classList.add("has-answer");
+  els.questionArea.classList.add("answered");
+
   state.questionIndex += 1;
   els.progressBar.style.width = `${(state.questionIndex / state.total) * 100}%`;
   els.nextButton.textContent = state.questionIndex >= state.total ? "結果を見る  →" : "次の問題  →";
@@ -301,6 +316,7 @@ function answerQuestion(id) {
 
 function finishGame() {
   stopAudio(true);
+  els.shareStatus.textContent = "";
   els.questionArea.classList.add("hidden");
   els.resultArea.classList.remove("hidden");
   els.progressBar.style.width = "100%";
@@ -377,8 +393,49 @@ async function toggleAudio() {
   }
 }
 
+async function shareResult() {
+  const shareUrl = window.location.href;
+  const shareText = `Snow Man Intro Quizで${state.total}問中${state.score}問正解しました！`;
+  const shareData = {
+    title: "SNOW MAN // INTRO QUIZ",
+    text: shareText,
+    url: shareUrl,
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+      els.shareStatus.textContent = "結果を共有しました。";
+      return;
+    } catch (error) {
+      if (error.name === "AbortError") return;
+    }
+  }
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = `${shareText}\n${shareUrl}`;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      const copied = document.execCommand("copy");
+      textarea.remove();
+      if (!copied) throw new Error("Copy command failed");
+    }
+    els.shareStatus.textContent = "結果とURLをコピーしました。";
+  } catch (error) {
+    els.shareStatus.textContent = "共有できませんでした。URLを手動でコピーしてください。";
+  }
+}
+
 function wireEvents() {
   els.beginGame.addEventListener("click", startGame);
+  els.shareResult.addEventListener("click", shareResult);
   els.playButton.addEventListener("click", toggleAudio);
   els.nextButton.addEventListener("click", nextQuestion);
   els.retryButton.addEventListener("click", startGame);

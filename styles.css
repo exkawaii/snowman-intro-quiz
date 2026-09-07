@@ -402,3 +402,35 @@ kbd { display: inline-grid; place-items: center; width: 18px; height: 18px; marg
   .answer-reveal-copy h3 { font-size: 18px; }
   .site-footer { margin-left: -11px; margin-right: -11px; padding-left: 11px; padding-right: 11px; }
 }
+
+/* Answer results use the same prominent area as the intro player, so the next action is immediate. */
+.answer-mount:empty { display: none; }
+.answer-inline { width: 100%; }
+.audio-stage.has-answer { min-height: 0; padding: 16px; display: block; background: var(--white); border-color: var(--ink); }
+.audio-stage.has-answer > .waveform,
+.audio-stage.has-answer > .audio-caption,
+.audio-stage.has-answer > .play-button,
+.audio-stage.has-answer > .time-row { display: none; }
+.audio-stage.has-answer > .answer-inline { display: grid; gap: 12px; }
+.audio-stage.has-answer .answer-reveal,
+.audio-stage.has-answer .feedback { margin-top: 0; }
+.question-area.answered > .answer-heading,
+.question-area.answered > .choices,
+.question-area.answered > .keyboard-hint { display: none; }
+.share-button { background: var(--accent); }
+.share-button:hover { background: var(--ink); }
+.share-status { min-height: 1.5em; margin: 12px 0 0; color: var(--muted); font: 500 10px/1.5 var(--mono); }
+.about-heading-line { display: inline-block; white-space: nowrap; }
+
+@media (max-width: 620px) {
+  .about-title h2 { font-size: clamp(31px, 11.5vw, 72px); }
+  .audio-stage.has-answer { padding: 12px; border-radius: 12px; }
+  .audio-stage.has-answer > .answer-inline { gap: 10px; }
+  .audio-stage.has-answer .answer-reveal { grid-template-columns: 94px minmax(0, 1fr); }
+  .audio-stage.has-answer .feedback { margin-top: 0; }
+  .share-status { margin-top: 9px; text-align: center; font-size: 10px; }
+}
+
+@media (max-width: 360px) {
+  .audio-stage.has-answer .answer-reveal { grid-template-columns: 78px minmax(0, 1fr); }
+}

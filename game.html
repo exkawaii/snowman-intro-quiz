@@ -96,6 +96,7 @@
                   <div class="time-track"><span id="time-bar"></span></div>
                   <span id="time-limit">00:12</span>
                 </div>
+                <div class="answer-inline hidden" id="answer-inline"></div>
               </div>
 
               <div class="answer-heading">
@@ -105,29 +106,33 @@
               <div class="choices" id="choices"></div>
               <p class="keyboard-hint"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> キーでも回答できます</p>
 
-              <div class="answer-reveal hidden" id="answer-reveal">
-                <div class="answer-art-frame">
-                  <img id="answer-artwork" alt="正解曲のジャケット画像" />
-                  <span id="answer-art-fallback">SM</span>
-                </div>
-                <div class="answer-reveal-copy">
-                  <span class="mono-label">TRACK HIGHLIGHT / 30 SEC PREVIEW</span>
-                  <span class="answer-release" id="answer-release"></span>
-                  <h3 id="answer-song-title"></h3>
-                  <p id="answer-song-credit"></p>
-                  <span class="reveal-status" id="reveal-status">PLAYING HIGHLIGHT</span>
+              <div class="answer-mount" id="answer-reveal-mount">
+                <div class="answer-reveal hidden" id="answer-reveal">
+                  <div class="answer-art-frame">
+                    <img id="answer-artwork" alt="正解曲のジャケット画像" />
+                    <span id="answer-art-fallback">SM</span>
+                  </div>
+                  <div class="answer-reveal-copy">
+                    <span class="mono-label">TRACK HIGHLIGHT / 30 SEC PREVIEW</span>
+                    <span class="answer-release" id="answer-release"></span>
+                    <h3 id="answer-song-title"></h3>
+                    <p id="answer-song-credit"></p>
+                    <span class="reveal-status" id="reveal-status">PLAYING HIGHLIGHT</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="feedback hidden" id="feedback">
-                <div class="feedback-icon" id="feedback-icon"></div>
-                <div class="feedback-copy">
-                  <span class="mono-label" id="feedback-label">CORRECT</span>
-                  <strong id="feedback-title"></strong>
-                  <p id="feedback-note"></p>
+              <div class="answer-mount" id="feedback-mount">
+                <div class="feedback hidden" id="feedback">
+                  <div class="feedback-icon" id="feedback-icon"></div>
+                  <div class="feedback-copy">
+                    <span class="mono-label" id="feedback-label">CORRECT</span>
+                    <strong id="feedback-title"></strong>
+                    <p id="feedback-note"></p>
+                  </div>
+                  <a class="feedback-link" id="apple-link" href="#" target="_blank" rel="noreferrer">Apple Musicで確認 <span>↗</span></a>
+                  <button class="button button-dark next-button" id="next-button" type="button">次の問題 <span>→</span></button>
                 </div>
-                <a class="feedback-link" id="apple-link" href="#" target="_blank" rel="noreferrer">Apple Musicで確認 <span>↗</span></a>
-                <button class="button button-dark next-button" id="next-button" type="button">次の問題 <span>→</span></button>
               </div>
             </div>
 
@@ -140,9 +145,11 @@
                 <div><span class="mono-label">BEST SCORE</span><strong id="best-score">00</strong></div>
               </div>
               <div class="result-actions">
+                <button class="button button-dark share-button" id="share-result" type="button">結果を共有する <span>↗</span></button>
                 <button class="button button-dark" id="retry-button" type="button">もう一度遊ぶ <span>↗</span></button>
                 <a class="text-link" href="index.html">トップへ戻る <span>↑</span></a>
               </div>
+              <p class="share-status" id="share-status" aria-live="polite"></p>
             </div>
           </div>
         </section>
