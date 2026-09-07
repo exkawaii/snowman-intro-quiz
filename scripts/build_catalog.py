@@ -119,8 +119,8 @@ RECENT_OFFICIAL = [
     ("AMENITY", "show time...", ""),
 ]
 
-# The nine member solo tracks from THE BEST are kept as a separate catalog so the
-# existing group/unit catalog keeps its original meaning and question pool.
+# The nine member solo tracks from THE BEST are explicit Apple records in the
+# same generated song list as the group and unit catalog.
 MEMBER_SOLO = [
     ("THE BEST 2020 - 2025", "7%", "岩本照", 1804833311),
     ("THE BEST 2020 - 2025", "iro iro", "深澤辰哉", 1804833312),

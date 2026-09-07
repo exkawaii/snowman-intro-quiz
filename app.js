@@ -12,7 +12,6 @@ const els = {
   roundCount: $("#round-count"),
   customRoundWrap: $("#custom-round-wrap"),
   customRoundCount: $("#custom-round-count"),
-  catalogMode: $("#catalog-mode"),
   challengeMode: $("#challenge-mode"),
   startNote: $("#start-note"),
   questionNumber: $("#question-number"),
@@ -65,7 +64,6 @@ const DEFAULT_HIGHLIGHT_START = 0;
 const HIGHLIGHT_SECONDS = 30;
 const state = {
   songs: [],
-  allSongs: [],
   remaining: [],
   current: null,
   choices: [],
@@ -77,7 +75,6 @@ const state = {
   started: false,
   audioMode: "intro",
   mode: "normal",
-  catalogMode: "group",
   hardPlayUsed: false,
   highlightStart: DEFAULT_HIGHLIGHT_START,
   highlightEnd: DEFAULT_HIGHLIGHT_START + HIGHLIGHT_SECONDS,
@@ -119,25 +116,6 @@ function renderWaveform() {
 function updateCatalogCount() {
   els.headerCount.textContent = `${state.songs.length} TRACKS READY`;
   els.customRoundCount.max = String(state.songs.length);
-}
-
-function selectCatalogSongs(mode = els.catalogMode.value) {
-  if (mode === "solo") return state.allSongs.filter((song) => song.category === "member-solo");
-  if (mode === "all") return [...state.allSongs];
-  return state.allSongs.filter((song) => song.category !== "member-solo");
-}
-
-function syncCatalogSelection() {
-  if (!state.allSongs.length) return;
-  state.songs = selectCatalogSongs();
-  updateCatalogCount();
-  syncCustomControls();
-}
-
-function catalogLabel() {
-  if (state.catalogMode === "solo") return "MEMBER SOLO";
-  if (state.catalogMode === "all") return "ALL CATALOG";
-  return "GROUP / UNIT";
 }
 
 function setLoading(loading) {
@@ -213,8 +191,6 @@ function totalLabel() {
 }
 
 function startGame() {
-  state.catalogMode = els.catalogMode.value;
-  state.songs = selectCatalogSongs(state.catalogMode);
   if (!state.songs.length) return;
   stopAudio(true);
   state.total = getRoundTotal();
@@ -405,7 +381,7 @@ function finishGame() {
   els.resultTotal.textContent = state.total;
   const accuracy = state.total ? Math.round((state.score / state.total) * 100) : 0;
   els.resultAccuracy.textContent = `${accuracy}%`;
-  const bestKey = `snowman-intro-quiz-best-${state.catalogMode}-${state.mode}-${state.total}`;
+  const bestKey = `snowman-intro-quiz-best-${state.mode}-${state.total}`;
   const oldBest = Number(localStorage.getItem(bestKey) || 0);
   const best = Math.max(oldBest, state.score);
   localStorage.setItem(bestKey, String(best));
@@ -484,7 +460,7 @@ async function toggleAudio() {
 async function shareResult() {
   const shareUrl = window.location.href;
   const modeLabel = state.mode === "hard" ? "HARDCORE" : "NORMAL";
-  const shareText = `Snow Man Intro Quiz ${catalogLabel()} / ${modeLabel}で${state.total}問中${state.score}問正解しました！`;
+  const shareText = `Snow Man Intro Quiz ${modeLabel}で${state.total}問中${state.score}問正解しました！`;
   const shareData = {
     title: "SNOW MAN // INTRO QUIZ",
     text: shareText,
@@ -529,7 +505,6 @@ function wireEvents() {
   els.nextButton.addEventListener("click", nextQuestion);
   els.retryButton.addEventListener("click", startGame);
   els.roundCount.addEventListener("change", syncCustomControls);
-  els.catalogMode.addEventListener("change", syncCatalogSelection);
   els.challengeMode.addEventListener("change", syncChallengeControls);
   els.hardSubmit.addEventListener("click", submitHardAnswer);
   els.hardAnswerInput.addEventListener("keydown", (event) => {
@@ -596,11 +571,11 @@ async function init() {
     const response = await fetch("songs.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`songs.json returned ${response.status}`);
     const data = await response.json();
-    state.allSongs = Array.isArray(data.songs)
+    state.songs = Array.isArray(data.songs)
       ? data.songs.filter((song) => song.title && song.previewUrl)
       : [];
-    if (state.allSongs.length < 4) throw new Error("Not enough songs with previews");
-    syncCatalogSelection();
+    if (state.songs.length < 4) throw new Error("Not enough songs with previews");
+    updateCatalogCount();
     setLoading(false);
     els.startGate.classList.remove("hidden");
   } catch (error) {
