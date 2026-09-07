@@ -12,6 +12,8 @@ const els = {
   roundCount: $("#round-count"),
   customRoundWrap: $("#custom-round-wrap"),
   customRoundCount: $("#custom-round-count"),
+  challengeMode: $("#challenge-mode"),
+  startNote: $("#start-note"),
   questionNumber: $("#question-number"),
   questionTotal: $("#question-total"),
   progressBar: $("#progress-bar"),
@@ -29,6 +31,10 @@ const els = {
   timeBar: $("#time-bar"),
   timeLimit: $("#time-limit"),
   choices: $("#choices"),
+  keyboardHint: $(".keyboard-hint"),
+  hardAnswerPanel: $("#hard-answer-panel"),
+  hardAnswerInput: $("#hard-answer-input"),
+  hardSubmit: $("#hard-submit"),
   answerReveal: $("#answer-reveal"),
   answerArtwork: $("#answer-artwork"),
   answerArtFallback: $("#answer-art-fallback"),
@@ -53,6 +59,7 @@ const els = {
 };
 
 const INTRO_SECONDS = 12;
+const HARD_INTRO_SECONDS = 3;
 const DEFAULT_HIGHLIGHT_START = 0;
 const HIGHLIGHT_SECONDS = 30;
 const state = {
@@ -67,6 +74,8 @@ const state = {
   answered: false,
   started: false,
   audioMode: "intro",
+  mode: "normal",
+  hardPlayUsed: false,
   highlightStart: DEFAULT_HIGHLIGHT_START,
   highlightEnd: DEFAULT_HIGHLIGHT_START + HIGHLIGHT_SECONDS,
 };
@@ -127,16 +136,33 @@ function syncCustomControls() {
   }
 }
 
+function syncChallengeControls() {
+  const isHard = els.challengeMode.value === "hard";
+  els.startNote.textContent = isHard
+    ? "HARDCORE：3秒・1問1回再生・4択なし。曲名を入力して回答します。"
+    : "問題数を選んでから開始してください。1問目のイントロが自動で流れます。";
+}
+
+function getIntroSeconds() {
+  return state.mode === "hard" ? HARD_INTRO_SECONDS : INTRO_SECONDS;
+}
+
 function setAudioStatus(text) {
   els.audioStatus.textContent = text;
 }
 
 function setPlayButton(isPlaying) {
   const isHighlight = state.audioMode === "highlight";
+  const playLocked = state.mode === "hard" && state.hardPlayUsed && !isPlaying;
+  const playLabel = state.mode === "hard" ? "PLAY 3 SEC" : "PLAY INTRO";
   els.playButton.classList.toggle("is-playing", isPlaying);
-  els.playText.textContent = isPlaying ? (isHighlight ? "PAUSE HIGHLIGHT" : "PAUSE INTRO") : (isHighlight ? "PLAY HIGHLIGHT" : "PLAY INTRO");
+  els.playButton.classList.toggle("is-locked", playLocked);
+  els.playText.textContent = isPlaying
+    ? (isHighlight ? "PAUSE HIGHLIGHT" : "PAUSE INTRO")
+    : (playLocked ? "ONE PLAY USED" : (isHighlight ? "PLAY HIGHLIGHT" : playLabel));
+  els.playButton.disabled = playLocked;
   els.audioStage.classList.toggle("is-playing", isPlaying);
-  els.playButton.setAttribute("aria-label", isPlaying ? "再生を一時停止" : (isHighlight ? "ハイライトを再生" : "イントロを再生"));
+  els.playButton.setAttribute("aria-label", playLocked ? "この問題の再生は終了しました" : (isPlaying ? "再生を一時停止" : (isHighlight ? "ハイライトを再生" : (state.mode === "hard" ? "3秒だけ再生" : "イントロを再生"))));
 }
 
 function stopAudio(reset = false) {
@@ -174,7 +200,10 @@ function startGame() {
   state.questionIndex = 0;
   state.score = 0;
   state.streak = 0;
+  state.mode = els.challengeMode.value;
+  state.hardPlayUsed = false;
   state.started = true;
+  els.headerCount.textContent = state.mode === "hard" ? "HARDCORE MODE" : `${state.songs.length} TRACKS READY`;
   els.score.textContent = "00";
   els.streak.textContent = "00";
   els.questionTotal.textContent = totalLabel();
@@ -188,6 +217,22 @@ function startGame() {
 function buildChoices(answer) {
   const distractors = shuffle(state.songs.filter((song) => song.id !== answer.id)).slice(0, 3);
   return shuffle([answer, ...distractors]);
+}
+
+function normalizeTitle(value) {
+  return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("ja-JP").replace(/[^\p{L}\p{N}ー]/gu, "");
+}
+
+function submitHardAnswer() {
+  if (state.mode !== "hard" || state.answered || !state.current) return;
+  const guess = els.hardAnswerInput.value.trim();
+  if (!guess) {
+    setAudioStatus("TYPE YOUR ANSWER");
+    els.hardAnswerInput.focus();
+    return;
+  }
+  const isCorrect = normalizeTitle(guess) === normalizeTitle(state.current.title);
+  answerQuestion(null, isCorrect);
 }
 
 function resetAnswerReveal() {
@@ -204,11 +249,15 @@ function resetAnswerReveal() {
   els.answerSongTitle.textContent = "";
   els.answerSongCredit.textContent = "";
   els.revealStatus.textContent = "PLAYING HIGHLIGHT";
+  els.hardAnswerInput.value = "";
+  els.hardAnswerInput.disabled = false;
+  els.hardSubmit.disabled = false;
 }
 
 function renderQuestion() {
   const song = state.current;
   state.audioMode = "intro";
+  state.hardPlayUsed = false;
   state.highlightStart = DEFAULT_HIGHLIGHT_START;
   state.highlightEnd = state.highlightStart + HIGHLIGHT_SECONDS;
   els.questionNumber.textContent = pad(state.questionIndex + 1);
@@ -217,13 +266,16 @@ function renderQuestion() {
   els.feedback.classList.add("hidden");
   els.feedback.classList.remove("is-wrong");
   resetAnswerReveal();
-  els.audioCaptionLabel.textContent = "INTRO PREVIEW";
+  els.audioCaptionLabel.textContent = state.mode === "hard" ? "HARDCORE / 3 SEC" : "INTRO PREVIEW";
   els.timeBar.style.width = "0%";
-  els.timeLimit.textContent = formatTime(INTRO_SECONDS);
+  els.timeLimit.textContent = formatTime(getIntroSeconds());
+  els.hardAnswerPanel.classList.toggle("hidden", state.mode !== "hard");
+  els.choices.classList.toggle("hidden", state.mode === "hard");
+  els.keyboardHint.classList.toggle("hidden", state.mode === "hard");
   setAudioStatus("LOADING INTRO");
   setPlayButton(false);
 
-  els.choices.innerHTML = state.choices.map((choice, index) => `
+  els.choices.innerHTML = state.mode === "hard" ? "" : state.choices.map((choice, index) => `
     <button class="choice" type="button" data-id="${choice.id}" data-index="${index}" aria-label="${index + 1} ${choice.title}">
       <span class="choice-number">${index + 1}</span>
       <span><strong class="choice-title">${choice.title}</strong></span>
@@ -269,11 +321,11 @@ function showAnswerReveal(song) {
   }
 }
 
-function answerQuestion(id) {
+function answerQuestion(id, forcedCorrect = null) {
   if (state.answered || !state.current) return;
   state.answered = true;
   stopAudio();
-  const isCorrect = id === state.current.id;
+  const isCorrect = forcedCorrect === null ? id === state.current.id : forcedCorrect;
   if (isCorrect) {
     state.score += 1;
     state.streak += 1;
@@ -288,6 +340,9 @@ function answerQuestion(id) {
     if (button.dataset.id === state.current.id) button.classList.add("correct");
     if (button.dataset.id === id && !isCorrect) button.classList.add("wrong");
   });
+
+  els.hardAnswerInput.disabled = true;
+  els.hardSubmit.disabled = true;
 
   els.feedback.classList.remove("hidden");
   els.feedback.classList.toggle("is-wrong", !isCorrect);
@@ -324,7 +379,7 @@ function finishGame() {
   els.resultTotal.textContent = state.total;
   const accuracy = state.total ? Math.round((state.score / state.total) * 100) : 0;
   els.resultAccuracy.textContent = `${accuracy}%`;
-  const bestKey = `snowman-intro-quiz-best-${state.total}`;
+  const bestKey = `snowman-intro-quiz-best-${state.mode}-${state.total}`;
   const oldBest = Number(localStorage.getItem(bestKey) || 0);
   const best = Math.max(oldBest, state.score);
   localStorage.setItem(bestKey, String(best));
@@ -338,13 +393,20 @@ function finishGame() {
 
 async function playIntro() {
   if (!state.current || !state.current.previewUrl || state.answered) return;
+  if (state.mode === "hard" && state.hardPlayUsed) {
+    setAudioStatus("ONE PLAY ONLY");
+    return;
+  }
+  const introSeconds = getIntroSeconds();
   state.audioMode = "intro";
-  els.audioCaptionLabel.textContent = "INTRO PREVIEW";
-  els.timeLimit.textContent = formatTime(INTRO_SECONDS);
+  els.audioCaptionLabel.textContent = state.mode === "hard" ? "HARDCORE / 3 SEC" : "INTRO PREVIEW";
+  els.timeLimit.textContent = formatTime(introSeconds);
   els.audio.currentTime = 0;
   try {
     await els.audio.play();
-    setAudioStatus("PLAYING INTRO");
+    if (state.mode === "hard") state.hardPlayUsed = true;
+    setPlayButton(true);
+    setAudioStatus(state.mode === "hard" ? "PLAYING 3 SEC" : "PLAYING INTRO");
   } catch (error) {
     setAudioStatus("TAP TO PLAY");
   }
@@ -395,7 +457,8 @@ async function toggleAudio() {
 
 async function shareResult() {
   const shareUrl = window.location.href;
-  const shareText = `Snow Man Intro Quizで${state.total}問中${state.score}問正解しました！`;
+  const modeLabel = state.mode === "hard" ? "HARDCORE" : "NORMAL";
+  const shareText = `Snow Man Intro Quiz ${modeLabel}で${state.total}問中${state.score}問正解しました！`;
   const shareData = {
     title: "SNOW MAN // INTRO QUIZ",
     text: shareText,
@@ -440,6 +503,14 @@ function wireEvents() {
   els.nextButton.addEventListener("click", nextQuestion);
   els.retryButton.addEventListener("click", startGame);
   els.roundCount.addEventListener("change", syncCustomControls);
+  els.challengeMode.addEventListener("change", syncChallengeControls);
+  els.hardSubmit.addEventListener("click", submitHardAnswer);
+  els.hardAnswerInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      submitHardAnswer();
+    }
+  });
 
   els.answerArtwork.addEventListener("error", () => {
     els.answerArtwork.classList.add("hidden");
@@ -464,21 +535,21 @@ function wireEvents() {
   });
   els.audio.addEventListener("timeupdate", () => {
     const start = state.audioMode === "highlight" ? state.highlightStart : 0;
-    const end = state.audioMode === "highlight" ? state.highlightEnd : INTRO_SECONDS;
+    const end = state.audioMode === "highlight" ? state.highlightEnd : getIntroSeconds();
     const currentTime = Math.min(els.audio.currentTime, end);
     const progress = end > start ? Math.max(0, Math.min(100, ((currentTime - start) / (end - start)) * 100)) : 0;
     els.timeBar.style.width = `${progress}%`;
     if (currentTime >= end - 0.05 && !els.audio.paused) {
       els.audio.pause();
       els.audio.currentTime = end;
-      setAudioStatus(state.audioMode === "highlight" ? "HIGHLIGHT ENDED" : "12 SEC PREVIEW ENDED");
+      setAudioStatus(state.audioMode === "highlight" ? "HIGHLIGHT ENDED" : `${getIntroSeconds()} SEC PREVIEW ENDED`);
       if (state.audioMode === "highlight") els.revealStatus.textContent = "HIGHLIGHT ENDED";
     }
   });
 
   document.addEventListener("keydown", (event) => {
     if (event.target.matches("input, select, textarea")) return;
-    if (!els.questionArea.classList.contains("hidden") && !state.answered && /^[1-4]$/.test(event.key)) {
+    if (!els.questionArea.classList.contains("hidden") && state.mode !== "hard" && !state.answered && /^[1-4]$/.test(event.key)) {
       const button = els.choices.querySelector(`[data-index="${Number(event.key) - 1}"]`);
       if (button) button.click();
     }
@@ -493,6 +564,7 @@ async function init() {
   renderWaveform();
   wireEvents();
   syncCustomControls();
+  syncChallengeControls();
   try {
     const response = await fetch("songs.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`songs.json returned ${response.status}`);
